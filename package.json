@@ -1,0 +1,30 @@
+{
+  "name": "festivalmemory-weld",
+  "version": "1.0.0",
+  "description": "Weld application to create a website during the music weekend festival",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olgatar/festivalmemory-weld.git"
+  },
+  "author": "Olga Tarassova, during internship at Weld",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olgatar/festivalmemory-weld/issues"
+  },
+  "homepage": "https://github.com/olgatar/festivalmemory-weld#readme",
+  "dependencies": {
+    "angular": "^1.2.29",
+    "angular-sanitize": "^1.2.29",
+    "jquery": "^3.0.0",
+    "jasmine": "^2.4.1"
+  },
+  "devDependencies": {
+    "angular": "^1.2.29",
+    "angular-sanitize": "^1.2.29",
+    "jasmine": "^2.4.1"
+  }
+}
