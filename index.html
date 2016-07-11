@@ -13,31 +13,83 @@
   </head>
   <body>
 
-    <div ng-app="app">
+    <div ng-app="app" ng-controller="MainCtrl" data-ng-init="showPage1();">
 
-      <div ng-controller="HeaderCtrl">
-        <h1 ng-style="headerStyle">{{header.text}}</h1>
+      <div class="header" ng-controller="HeaderCtrl">
+        <h1>{{header.text}}</h1>
       </div>
 
-      <div ng-controller="PersonalNrInputCtrl as ctrl">
+      <div ng-show="page1" ng-controller="PersonalNumberCtrl as ctrl">
         <div class="container">
           <div class="row row-centered">
-            <div class="personal-number-input col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
-              <form name="personalNrInput" ng-submit="ctrl.register()">
+            <div class="personal-number-input col-sm-8 col-sm-offset-2 col-md-5 col-md-offset-3 col-lg-5 col-lg-offset-3">
+              <form name="personalNumber" ng-submit="ctrl.register(); showPage2();">
                 <div class="form-group">
-                <label for="personnumber">Personnummer</label>
-                <input type="number" class="form-control" id="personnumber" placeholder="ååååmmddXXXX" name="userPersonalNr" ng-model="ctrl.user.personalnumber" ng-minlength="10" ng-maxlength="12" required>
-                <span class="error" ng-show="personalNrInput.userPersonalNr.$error.minlength">
-                Alltför kort!</span>
-                <span class="error" ng-show="personalNrInput.userPersonalNr.$error.maxlength">
-                Alltför lång!</span>
+                  <label for="personnumber">Personnummer</label>
+                  <input type="number" class="form-control" id="personnumber" placeholder="ååååmmddXXXX" name="userPersonalNumber" ng-model="ctrl.user.personalnumber" ng-minlength="12" ng-maxlength="12" required>
+                  <span class="error" ng-show="personalNumber.userPersonalNumber.$error.minlength">
+                  Ange personnumer med 12 siffror!</span>
+                  <span class="error" ng-show="personalNumber.userPersonalNumber.$error.maxlength">
+                  Alltför lång!</span>
                 </div>
-                <button type="submit" class="next-button btn btn-primary btn-lg btn-block" name="button" >Nästa</button>
+                <a href="#"><button type="submit" class="next-button btn btn-primary btn-lg btn-block" name="button">Nästa</button></a>
               </form>
             </div>
          </div>
        </div>
      </div>
+
+     <div ng-show="page2" ng-controller="PersonalDetailsCtrl as ctrl">
+       <div class="container">
+         <div class="row row-centered">
+           <div class="main-input col-sm-8 col-sm-offset-2 col-md-5 col-md-offset-3 col-lg-5 col-lg-offset-3">
+             <form name="personal-details-form" ng-submit="ctrl.register(); showPage3();">
+               <div class="form-group">
+                 <label for="user-name">Namn</label>
+                 <input type="text" class="form-control" id="user-name" placeholder="Name and Surname" name="userName" ng-model="ctrl.user.name" required>
+               </div>
+               <div class="form-group">
+                 <label for="user-email">Email</label>
+                 <input type="email" class="form-control" id="user-email" placeholder="example@gmail.com" name="userEmail" ng-model="ctrl.user.email" required>
+               </div>
+               <div class="form-group">
+                 <label for="user-phone">Telefon</label>
+                 <input type="number" class="form-control" id="user-phone" placeholder="+46712345678" name="userPhone" ng-model="ctrl.user.phone" required>
+               </div>
+               <div class="form-group">
+                 <label for="user-address">Adress</label>
+                 <input type="text" class="form-control" id="user-address" placeholder="" name="userAddress" ng-model="ctrl.user.address1" required>
+               </div>
+               <div class="form-group">
+                 <label for="user-city">Stad</label>
+                 <input type="text" class="form-control" id="user-city" placeholder="" name="userCity" ng-model="ctrl.user.city" required>
+               </div>
+               <div class="form-group">
+                 <label for="user-zipcode">Postnummer</label>
+                 <input type="number" class="form-control" id="user-zipcode" placeholder="" name="userZipcode" ng-model="ctrl.user.zipcode" required>
+               </div>
+               <div class="form-group">
+                 <label for="user-countrycode">Land</label>
+                 <input type="text" class="form-control" id="user-countrycode" placeholder="" name="userCountrycode" ng-model="ctrl.user.countrycode" required>
+               </div>
+               <a href="#"><button type="submit" class="next-button btn btn-primary btn-lg btn-block" name="button" >Nästa</button></a>
+             </form>
+           </div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-show="page3" ng-controller="PhotoUploadCtrl as ctrl">
+      <div class="container">
+        <div class="row row-centered">
+          <div class="upload-photo col-sm-8 col-sm-offset-2 col-md-5 col-md-offset-3 col-lg-5 col-lg-offset-3">
+              <a href="#"><button type="submit" class="next-button btn btn-primary btn-lg btn-block" name="button">Lägg till foto</button></a>
+          </div>
+       </div>
+     </div>
+   </div>
+
+
 
   </body>
 </html>
