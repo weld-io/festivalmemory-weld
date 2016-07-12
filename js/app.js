@@ -31,9 +31,9 @@ app.controller('MainCtrl', function($scope){
   }
 });
 
-function HeaderCtrl($scope, Header) {
-  $scope.header = Header;
-}
+app.controller('HeaderCtrl', function($scope, Header) {
+	$scope.header = Header;
+});
 
 app.controller('PersonalNumberCtrl', [function($scope) {
 
