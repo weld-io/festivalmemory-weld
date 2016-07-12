@@ -1,3 +1,7 @@
+html {
+  font-family: "Open Sans", sans-serif;
+}
+
 .header h1 {
   font-family: "Alfa Slab One";
   color: #000;
@@ -10,7 +14,6 @@
 
 .personal-number-input {
   padding-top: 150px;
-  font-family: "Open Sans", sans-serif;;
 }
 
 a {
@@ -19,6 +22,7 @@ a {
 
 label {
   font-size: 2em !important;
+  margin-bottom: 10px;
 }
 
 input {
@@ -27,14 +31,19 @@ input {
   color: rgb(129, 127, 128) !important;
   font-size: 2em !important;
   background-color: white !important;
-  height: 50px !important;
+  height: 60px !important;
+}
+
+span {
+  font-size: 1.5em !important;
 }
 
 button {
   background-color: #00D2EF !important;
-  height: 60px !important;
+  height: 70px !important;
   border: none !important;
   font-size: 2em !important;
+  margin-top: 20px !important;
 }
 
 .upload-photo {
@@ -44,3 +53,18 @@ button {
 .upload-photo button{
   height: 120px !important;
 }
+
+.go-to-last-page {
+  height: 300px;
+}
+
+/* .go-to-last-page img {
+  width: 100% !important;
+  border-radius: 15px !important;
+} */
+
+.go-to-last-page button{
+  height: 120px !important;
+}
+
+/* https://weld-images.imgix.net/534fd70294b7ec0b00000002/-KKsQ0Uo6ZvoGiyVqn0K/image_85328.jpg */
