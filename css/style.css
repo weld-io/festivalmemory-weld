@@ -1,3 +1,23 @@
+@font-face {
+    font-family: "weld-regular";
+    src: url("http://forum.weld.io/uploads/weld/original/1X/7dfa9aa27cdfe9e5016c0e515f9259741e50de88.woff") format('woff');
+}
+
+@font-face {
+    font-family: "weld-light";
+    src: url("http://forum.weld.io/uploads/weld/original/1X/23e5e535105291105620495e5317f31772f7a36c.woff") format('woff');
+}
+
+@font-face {
+    font-family: "weld-regular";
+    src: url("http://forum.weld.io/uploads/weld/original/1X/daa1bc6f47dbf455dea185249cc518716d90feef.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: "weld-light";
+    src: url("http://forum.weld.io/uploads/weld/original/1X/91fd76e198980c481ffec1d40299eedd99e9d41f.woff2") format('woff2');
+}
+
 html {
   font-family: "Open Sans", sans-serif;
 }
