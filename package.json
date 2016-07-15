@@ -1,5 +1,5 @@
 {
-  "name": "festivalmemory-weld",
+  "name": "festivalminne",
   "version": "1.0.0",
   "description": "Weld application to create a website during the music weekend festival",
   "main": "app.js",
@@ -8,21 +8,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/olgatar/festivalmemory-weld.git"
+    "url": "git+https://github.com/weld-io/festivalminne.git"
   },
   "author": "Olga Tarassova, during internship at Weld",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/olgatar/festivalmemory-weld/issues"
+    "url": "https://github.com/weld-io/festivalminne/issues"
   },
-  "homepage": "https://github.com/olgatar/festivalmemory-weld#readme",
+  "homepage": "https://github.com/weld-io/festivalminne#readme",
   "dependencies": {
     "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
     "angular-sanitize": "^1.5.7",
-    "jasmine": "^2.4.1"
+    "jasmine": "^2.4.1",
+    "angularjs-country-select": "git://github.com/weld-io/angularjs-country-select.git#master"
   },
   "devDependencies": {
     "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
     "angular-sanitize": "^1.5.7",
     "jasmine": "^2.4.1"
   }

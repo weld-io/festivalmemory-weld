@@ -5,107 +5,122 @@
     <title>Festival minne</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <script  type="text/javascript" src="node_modules/angular/angular.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Arimo|Open+Sans|Lato' rel='stylesheet' type='text/css'>
+    <script  type="text/javascript" src="node_modules/angularjs-country-select/angular.country-select.js"></script>
+    <script  type="text/javascript" src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="jquery/jquery-3.0.0.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/app.js"></script>
   </head>
   <body>
 
-    <div ng-app="app" ng-controller="MainCtrl" data-ng-init="showPage1();">
+    <div ng-app="app" ng-controller="MainCtrl as ctrl">
 
-      <div class="header" ng-controller="HeaderCtrl">
-        <div class="container">
+      <div class="header">
+        <!--<div class="container">
           <div class="row row-centered">
-            <h1>{{header.text}}</h1>
+            <div class="header-div col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3"> -->
+              <span id="heading-part1">FESTIVAL</span><br><span id="heading-part2">MINNEN</span>
+            <!-- </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
-      <div ng-show="page1" ng-controller="PersonalNumberCtrl as ctrl">
+<alert closable></alert>
+
+      <div class="main-input-form">
         <div class="container">
           <div class="row row-centered">
-            <div class="personal-number-input col-sm-8 col-sm-offset-2 col-md-5 col-md-offset-3 col-lg-5 col-lg-offset-3">
-              <form name="personalNumber" ng-submit="ctrl.register(); showPage2();">
+            <div class="personal-number-input col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+              <form name="inputForm" ng-submit="register();">
                 <div class="form-group">
-                  <label for="personnumber">Personnummer</label>
-                  <input type="number" class="form-control" id="personnumber" placeholder="ååååmmddXXXX" name="userPersonalNumber" ng-model="ctrl.user.personalnumber" ng-minlength="12" ng-maxlength="12" required>
-                  <span class="error" ng-show="personalNumber.userPersonalNumber.$error.minlength">
+                  <div class="label-div" style="background-color:#47e2a1;">
+                    <span class="label-span">PERSONNUMMER</span>
+                  </div>
+                  <input type="number" class="form-control" id="personnumber" placeholder="ååååmmddXXXX" name="userPersonalNumber" ng-model="user.personalnumber" ng-minlength="12" ng-maxlength="12" required>
+                  <span class="error" ng-show="inputForm.userPersonalNumber.$error.minlength">
                   Ange personnumer med 12 siffror!</span>
-                  <span class="error" ng-show="personalNumber.userPersonalNumber.$error.maxlength">
+                  <span class="error" ng-show="inputForm.userPersonalNumber.$error.maxlength">
                   Alltför lång!</span>
                 </div>
-                <a href="#"><button type="submit" class="next-button btn btn-primary btn-lg btn-block" name="button">Nästa</button></a>
+                <div class="form-group">
+                  <div class="label-div" style="background-color:#6ec8dc;">
+                    <span class="label-span">NAMN</span>
+                  </div>
+                  <input type="text" class="form-control" id="user-name" placeholder="Namn Efternamn" name="userName" ng-model="user.name" required>
+                </div>
+                <div class="form-group">
+                  <div class="label-div" style="background-color:#be59a0;">
+                    <span class="label-span">EMAIL</span>
+                  </div>
+                  <input type="email" class="form-control" id="user-email" placeholder="example@gmail.com" name="userEmail" ng-model="user.email" required>
+                </div>
+                <div class="form-group">
+                  <div class="label-div" style="background-color:#f86060;">
+                    <span class="label-span">TELEFON</span>
+                  </div>
+                  <input type="number" class="form-control" id="user-phone" placeholder="+46712345678" name="userPhone" ng-model="user.phone" required>
+                </div>
+                <div class="form-group">
+                  <div class="label-div" style="background-color:#47e2a1;">
+                    <span class="label-span">ADRESS</span>
+                  </div>
+                  <input type="text" class="form-control" id="user-address" placeholder="Kungsgatan 1" name="userAddress" ng-model="user.address1" required>
+                </div>
+                <div class="form-group">
+                  <div class="label-div" style="background-color:#6ec8dc;">
+                    <span class="label-span">STAD</span>
+                  </div>
+                  <input type="text" class="form-control" id="user-city" placeholder="Stockholm" name="userCity" ng-model="user.city" required>
+                </div>
+                <div class="form-group">
+                  <div class="label-div" style="background-color:#be59a0;">
+                    <span class="label-span">POSTNUMMER</span>
+                  </div>
+                  <input type="number" class="form-control" id="user-zipcode" placeholder="123 45" name="userZipcode" ng-model="user.zipcode" required>
+                </div>
+                <div class="form-group">
+                  <div class="label-div" style="background-color:#f86060;">
+                    <span class="label-span">LAND</span>
+                  </div>
+                  <input country-select ng-model="selectedCountry" is-eu="isEUboolean" type="text" class="form-control" id="user-countrycode" placeholder="Sverige" name="userCountrycode" ng-model="user.countrycode" required>
+                </div>
+                <div class="form-group">
+                  <div class="label-div" style="background-color:#be59a0;">
+                    <span class="label-span">FOTOGRAFI</span>
+                  </div>
+                  <div class="image-upload">
+                    <label class="fileContainer" onclick="visibility:hidden">
+                      Tryck här för att ladda upp en bild
+                      <input class="form-control" type='file' id='getimage' name="background-image" ng-blur="showImageDiv();" onchange="readURL(event);" />
+                    </label></br></br>
+                    <div id="image-div" ng-show="ImageDiv"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="label-div" style="background-color:#6ec8dc;">
+                    <span class="label-span">DOMÄNNAMN</span>
+                  </div>
+                  <input type="text" class="form-control" id="domain" placeholder="festivalminne" name="userDomain" ng-model="user.domain" ng-change="showDomainSearch();" ng-blur="searchDomain(user.domain);" required>
+                  <div class="domain-search" ng-show="DomainSearch">
+                    <div class="domain-se">
+                      <span>{{user.domain}}</span><span class="country">.se</span><span></span><a href="#" ng-show="showDomainSE"><button type="submit" class="select-button btn btn-primary" name="button">{{freeDomainSE}}</button></a>
+                    </div>
+                    <div class="domain-nu">
+                      <span>{{user.domain}}</span><span class="country">.nu</span><span></span><a href="#" ng-show="showDomainNU"><button type="submit" class="select-button btn btn-primary" name="button">{{freeDomainNU}}</button></a>
+                    </div>
+                  </div>
+                </div>
               </form>
+              <div class="">
+                  {{ PostDataResponse }}
+              </div>
+
             </div>
          </div>
        </div>
      </div>
 
-     <div ng-show="page2" ng-controller="PersonalDetailsCtrl as ctrl">
-       <div class="container">
-         <div class="row row-centered">
-           <div class="main-input col-sm-8 col-sm-offset-2 col-md-5 col-md-offset-3 col-lg-5 col-lg-offset-3">
-             <form name="personal-details-form" ng-submit="ctrl.register(); showPage3();">
-               <div class="form-group">
-                 <label for="user-name">Namn</label>
-                 <input type="text" class="form-control" id="user-name" placeholder="Namn och Efternamn" name="userName" ng-model="ctrl.user.name" required>
-               </div>
-               <div class="form-group">
-                 <label for="user-email">Email</label>
-                 <input type="email" class="form-control" id="user-email" placeholder="example@gmail.com" name="userEmail" ng-model="ctrl.user.email" required>
-               </div>
-               <div class="form-group">
-                 <label for="user-phone">Telefon</label>
-                 <input type="number" class="form-control" id="user-phone" placeholder="+46712345678" name="userPhone" ng-model="ctrl.user.phone" required>
-               </div>
-               <div class="form-group">
-                 <label for="user-address">Adress</label>
-                 <input type="text" class="form-control" id="user-address" placeholder="" name="userAddress" ng-model="ctrl.user.address1" required>
-               </div>
-               <div class="form-group">
-                 <label for="user-city">Stad</label>
-                 <input type="text" class="form-control" id="user-city" placeholder="" name="userCity" ng-model="ctrl.user.city" required>
-               </div>
-               <div class="form-group">
-                 <label for="user-zipcode">Postnummer</label>
-                 <input type="number" class="form-control" id="user-zipcode" placeholder="" name="userZipcode" ng-model="ctrl.user.zipcode" required>
-               </div>
-               <div class="form-group">
-                 <label for="user-countrycode">Land</label>
-                 <input type="text" class="form-control" id="user-countrycode" placeholder="" name="userCountrycode" ng-model="ctrl.user.countrycode" required>
-               </div>
-               <a href="#"><button type="submit" class="next-button btn btn-primary btn-lg btn-block" name="button" >Nästa</button></a>
-             </form>
-           </div>
-        </div>
-      </div>
     </div>
-
-    <div ng-show="page3" ng-controller="PhotoUploadCtrl as ctrl">
-      <div class="container">
-        <div class="row row-centered">
-          <div class="upload-photo col-sm-8 col-sm-offset-2 col-md-5 col-md-offset-3 col-lg-5 col-lg-offset-3">
-              <a href="#"><button type="submit" ng-click="showPage4();" class="upload-photo-button btn btn-primary btn-lg btn-block" name="button">Lägg till foto</button></a>
-          </div>
-       </div>
-     </div>
-   </div>
-
-   <div ng-show="page4" ng-controller="GoToLastPageCtrl as ctrl">
-     <div class="container">
-       <div class="row row-centered">
-         <div class="go-to-last-page col-sm-9 col-sm-offset-1 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-           <!-- <img src="https://weld-images.imgix.net/534fd70294b7ec0b00000002/-KKsQ0Uo6ZvoGiyVqn0K/image_85328.jpg" class="img-responsive" alt="Your photo" /> -->
-           <a href="#"><button type="submit" class="go-to-last-page-button btn btn-primary btn-lg btn-block" name="button">Till sista sidan</button></a>
-         </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
   </body>
 </html>
