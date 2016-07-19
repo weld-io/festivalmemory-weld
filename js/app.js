@@ -78,6 +78,12 @@ app.controller('MainCtrl', function($scope,$http) {
     $http.post('https://weld-staging.herokuapp.com/api/users', data, config)
     .success(function (data, status, headers, config) {
         $scope.PostDataResponse = data;
+
+        $scope.ResponseDetails = "Data: " + data +
+                    "<hr />status: " + status +
+                    "<hr />headers: " + header +
+                    "<hr />config: " + config;
+        
     })
     .error(function (data, status, headers, config) {
         $scope.ResponseDetails = "Data: " + data +
