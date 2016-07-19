@@ -16,17 +16,18 @@
 
     <div ng-app="app" ng-controller="MainCtrl as ctrl">
 
-      <div class="header">
-        <!--<div class="container">
-          <div class="row row-centered">
-            <div class="header-div col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3"> -->
-              <span id="heading-part1">FESTIVAL</span><br><span id="heading-part2">MINNEN</span>
-            <!-- </div>
-          </div>
-        </div> -->
-      </div>
+    <div class="container-fluid">
 
-<alert closable></alert>
+        <div class="row">
+          <div class="header-div col-xs-12">
+            <h1 id="heading-part1">FESTIVAL</h1>
+            <h1 id="heading-part2">MINNEN</h1>
+          </div>
+        </div>
+
+    </div>
+
+    <alert closable></alert>
 
       <div class="main-input-form">
         <div class="container">
@@ -83,7 +84,7 @@
                   <div class="label-div" style="background-color:#f86060;">
                     <span class="label-span">LAND</span>
                   </div>
-                  <input country-select ng-model="selectedCountry" is-eu="isEUboolean" type="text" class="form-control" id="user-countrycode" placeholder="Sverige" name="userCountrycode" ng-model="user.countrycode" required>
+                  <input country-select is-eu="isEUboolean" type="text" class="form-control" id="user-countrycode" placeholder="Sverige" name="userCountrycode" ng-model="user.countrycode" required>
                 </div>
                 <div class="form-group">
                   <div class="label-div" style="background-color:#be59a0;">
@@ -104,17 +105,21 @@
                   <input type="text" class="form-control" id="domain" placeholder="festivalminne" name="userDomain" ng-model="user.domain" ng-change="showDomainSearch();" ng-blur="searchDomain(user.domain);" required>
                   <div class="domain-search" ng-show="DomainSearch">
                     <div class="domain-se">
-                      <span>{{user.domain}}</span><span class="country">.se</span><span></span><a href="#" ng-show="showDomainSE"><button type="submit" class="select-button btn btn-primary" name="button">{{freeDomainSE}}</button></a>
+                      <span>{{user.domain}}</span><span class="country">.se</span><span></span><button type="button" id="seButton" ng-show="showDomainSE" ng-click="buttonClicked(user.domain + '.se')" class="select-button btn btn-primary" name="button">{{freeDomainSE}}</button>
+                      <div class="domain-se">
+                        <span><a href="https://www.iis.se/domaner/registrera/se/villkor/" target="_blank">Läs villkor för .se domäner</a></span>
+                      </div>
                     </div>
                     <div class="domain-nu">
-                      <span>{{user.domain}}</span><span class="country">.nu</span><span></span><a href="#" ng-show="showDomainNU"><button type="submit" class="select-button btn btn-primary" name="button">{{freeDomainNU}}</button></a>
+                      <span>{{user.domain}}</span><span class="country">.nu</span><span></span><button type="button" id="nuButton" ng-show="showDomainNU" ng-click="buttonClicked(user.domain + '.nu')" class="select-button btn btn-primary" name="button">{{freeDomainNU}}</button>
+                      <div class="domain-nu">
+                        <span><a href="https://www.iis.se/docs/terms-and-conditions-nu.pdf" target="_blank">Läs villkor för .nu domäner</a></span>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <button ng-show="ready" type="submit" class="createPage btn btn-primary" name="button">Skapa din sida!</button>
               </form>
-              <div class="">
-                  {{ PostDataResponse }}
-              </div>
 
             </div>
          </div>
