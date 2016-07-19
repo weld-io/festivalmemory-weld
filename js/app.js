@@ -73,7 +73,7 @@ app.controller('MainCtrl', function($scope,$http) {
                 }
             }
 
-    $http.post('http://weld-staging.herokuapp.com/api/users', data, config)
+    $http.post('https://weld-staging.herokuapp.com/api/users', data, config)
     .success(function (data, status, headers, config) {
         $scope.PostDataResponse = data;
     })
