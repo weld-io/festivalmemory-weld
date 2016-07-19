@@ -65,6 +65,8 @@ app.controller('MainCtrl', function($scope,$http) {
 
   $scope.register = function() {
     $scope.user.countrycode = $scope.user.countrycode.split(":").pop();
+    $scope.user.tags = ["weekendfestival2016"];
+    $scope.user.pictureurl = " ";
     var data = JSON.stringify($scope.user);
 
     /* var config = {
