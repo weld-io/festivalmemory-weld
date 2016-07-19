@@ -1,4 +1,4 @@
-var app = angular.module('app', ["ngAnimate", "countrySelect"]);
+var app = angular.module('app', ['ngAnimate', 'countrySelect']);
 
 app.controller('MainCtrl', function($scope,$http) {
 
@@ -22,14 +22,18 @@ app.controller('MainCtrl', function($scope,$http) {
       $http.get('https://domain-production-weld.herokuapp.com/api/domain/' + $scope.user.domain + '.se')
       .then(function(response) {
           //First function handles success (.se domain is available)
-          $scope.freeDomainSE = "Ledig!";
+          $scope.freeDomainSE = "Välj!";
           $scope.showDomainSE = true;
+          var seButton = angular.element(document.querySelector('#seButton'));
+          seButton.css('color','#47e2a1');
           searchDomainNU();
 
       }, function(response) {
           //Second function handles error (.se domain is not available)
           $scope.freeDomainSE = "Upptagen!";
           $scope.showDomainSE = true;
+          var seButton = angular.element(document.querySelector('#seButton'));
+          seButton.css('color','#f86060');
           searchDomainNU();
       });
   };
@@ -39,39 +43,48 @@ app.controller('MainCtrl', function($scope,$http) {
       $http.get('https://domain-production-weld.herokuapp.com/api/domain/' + $scope.user.domain + '.nu')
       .then(function(response) {
           //First function handles success (.nu domain is available)
-          $scope.freeDomainNU = "Ledig!";
+          $scope.freeDomainNU = "Välj!";
           $scope.showDomainNU = true;
+          var nuButton = angular.element(document.querySelector('#nuButton'));
+          nuButton.css('color','#47e2a1');
 
       }, function(response) {
           //Second function handles error (.nu domain is not available)
           $scope.freeDomainNU = "Upptagen!";
           $scope.showDomainNU = true;
-
+          var nuButton = angular.element(document.querySelector('#nuButton'));
+          nuButton.css('color','#f86060');
       });
   };
 
-  $scope.register = function() {
+  $scope.buttonClicked = function(domain) {
+      $scope.user.domain = domain;
+      $scope.DomainSearch = false;
+      $scope.ready = true;
+  }
 
-    var data = $scope.user;
+  $scope.register = function() {
+    $scope.user.countrycode = $scope.user.countrycode.split(":").pop();
+    var data = JSON.stringify($scope.user);
 
     var config = {
-        headers : {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-        }
-    }
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            }
 
     $http.post('http://weld-staging.herokuapp.com/api/users', data, config)
     .success(function (data, status, headers, config) {
         $scope.PostDataResponse = data;
     })
-    .error(function (data, status, header, config) {
+    .error(function (data, status, headers, config) {
         $scope.ResponseDetails = "Data: " + data +
             "<hr />status: " + status +
             "<hr />headers: " + header +
             "<hr />config: " + config;
     });
 
-     console.log('User clicked next button', $scope.user);
+     console.log('User clicked next button', data);
   };
 
 });
