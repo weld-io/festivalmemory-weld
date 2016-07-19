@@ -69,13 +69,21 @@ app.controller('MainCtrl', function($scope,$http) {
     $scope.user.pictureurl = " ";
     var data = JSON.stringify($scope.user);
 
-    $http.post('https://weld-staging.herokuapp.com/api/users', data)
-    .success(function (data, status) {
+    var config = {
+                headers : {
+                    'Content-Type': 'application/json; charset=utf-8;'
+                }
+            }
+
+    $http.post('https://weld-staging.herokuapp.com/api/users', data, config)
+    .success(function (data, status, headers, config) {
         $scope.PostDataResponse = data;
     })
-    .error(function (data, status) {
+    .error(function (data, status, headers, config) {
         $scope.ResponseDetails = "Data: " + data +
-            "<hr />status: " + status;
+            "<hr />status: " + status +
+            "<hr />headers: " + headers +
+            "<hr />config: " + config;
     });
 
      console.log('User clicked next button', data);
