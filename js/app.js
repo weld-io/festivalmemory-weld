@@ -67,21 +67,21 @@ app.controller('MainCtrl', function($scope,$http) {
     $scope.user.countrycode = $scope.user.countrycode.split(":").pop();
     var data = JSON.stringify($scope.user);
 
-    var config = {
+    /* var config = {
                 headers : {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
                 }
-            }
+            } */
 
-    $http.post('https://weld-staging.herokuapp.com/api/users', data, config)
-    .success(function (data, status, headers, config) {
+    $http.post('https://weld-staging.herokuapp.com/api/users', data)
+    .success(function (data, status) {
         $scope.PostDataResponse = data;
     })
-    .error(function (data, status, headers, config) {
+    .error(function (data, status) {
         $scope.ResponseDetails = "Data: " + data +
-            "<hr />status: " + status +
+            "<hr />status: " + status; /*+
             "<hr />headers: " + header +
-            "<hr />config: " + config;
+            "<hr />config: " + config; */
 
     });
 
