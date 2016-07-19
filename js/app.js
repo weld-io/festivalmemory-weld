@@ -81,9 +81,9 @@ app.controller('MainCtrl', function($scope,$http) {
 
         $scope.ResponseDetails = "Data: " + data +
                     "<hr />status: " + status +
-                    "<hr />headers: " + header +
+                    "<hr />headers: " + headers +
                     "<hr />config: " + config;
-        
+
     })
     .error(function (data, status, headers, config) {
         $scope.ResponseDetails = "Data: " + data +
@@ -92,7 +92,7 @@ app.controller('MainCtrl', function($scope,$http) {
             "<hr />config: " + config;
     });
 
-     console.log('User clicked next button', $scope.ResponseDetails);
+     console.log('User clicked next button', data);
   };
 
 });
