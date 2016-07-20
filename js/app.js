@@ -1,6 +1,6 @@
 var app = angular.module('app', ['ngAnimate', 'countrySelect']);
 
-app.controller('MainCtrl', function($scope,$http) {
+app.controller('MainCtrl', function($scope,$http,$window) {
 
   $scope.user = {};
 
