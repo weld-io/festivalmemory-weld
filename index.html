@@ -33,7 +33,7 @@
         <div class="container">
           <div class="row row-centered">
             <div class="personal-number-input col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
-              <form name="inputForm" ng-submit="register();">
+              <form role="form" name="inputForm" ng-submit="register();">
                 <div class="form-group">
                   <div class="label-div" style="background-color:#47e2a1;">
                     <span class="label-span">PERSONNUMMER</span>
@@ -93,7 +93,7 @@
                   <div class="image-upload">
                     <label class="fileContainer" onclick="visibility:hidden">
                       Tryck här för att ladda upp en bild
-                      <input class="form-control" type='file' id='getimage' name="background-image" ng-blur="showImageDiv();" onchange="readURL(event);" />
+                      <input class="form-control" file-input="files" name="file" type='file' id='getimage' name="background-image" ng-blur="showImageDiv();" onchange="readURL(event);" />
                     </label></br></br>
                     <div id="image-div" ng-show="ImageDiv"></div>
                   </div>
