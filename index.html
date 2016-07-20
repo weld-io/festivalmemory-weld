@@ -93,7 +93,7 @@
                   <div class="image-upload">
                     <label class="fileContainer" onclick="visibility:hidden">
                       Tryck här för att ladda upp en bild
-                      <input class="form-control" file-input="files" name="file" type='file' id='getimage' name="background-image" ng-blur="showImageDiv();" onchange="readURL(event);" />
+                      <input class="form-control" file-input="files" name="file" type='file' ng-model="user.file" base-sixty-four-input accept="image/*" id='getimage' name="background-image" ng-blur="showImageDiv();" onchange="readURL(event);" />
                     </label></br></br>
                     <div id="image-div" ng-show="ImageDiv"></div>
                   </div>
@@ -105,18 +105,19 @@
                   <input type="text" class="form-control" id="domain" placeholder="festivalminne" name="userDomain" ng-model="user.domain" ng-change="showDomainSearch();" ng-blur="searchDomain(user.domain);" required>
                   <div class="domain-search" ng-show="DomainSearch">
                     <div class="domain-se">
-                      <span>{{user.domain}}</span><span class="country">.se</span><span></span><button type="button" id="seButton" ng-show="showDomainSE" ng-click="buttonClicked(user.domain + '.se')" class="select-button btn btn-primary" name="button">{{freeDomainSE}}</button>
-                      <div class="domain-se">
-                        <span><a href="https://www.iis.se/domaner/registrera/se/villkor/" target="_blank">Läs villkor för .se domäner</a></span>
-                      </div>
+                      <span>{{user.domain}}</span><span class="country">.se</span><span></span><button type="button" id="seButton" ng-show="showDomainSE" ng-click="buttonClicked(user.domain + '.se',$event)" class="select-button btn btn-primary" name="button">{{freeDomainSE}}</button>
                     </div>
                     <div class="domain-nu">
-                      <span>{{user.domain}}</span><span class="country">.nu</span><span></span><button type="button" id="nuButton" ng-show="showDomainNU" ng-click="buttonClicked(user.domain + '.nu')" class="select-button btn btn-primary" name="button">{{freeDomainNU}}</button>
-                      <div class="domain-nu">
-                        <span><a href="https://www.iis.se/docs/terms-and-conditions-nu.pdf" target="_blank">Läs villkor för .nu domäner</a></span>
-                      </div>
+                      <span>{{user.domain}}</span><span class="country">.nu</span><span></span><button type="button" id="nuButton" ng-show="showDomainNU" ng-click="buttonClicked(user.domain + '.nu',$event)" class="select-button btn btn-primary" name="button">{{freeDomainNU}}</button>
                     </div>
                   </div>
+                </div>
+                <div class="accept-terms checkbox" ng-show="AcceptTerms">
+                  <label>
+                    <fieldset class="form-inline">
+                      <input type="checkbox" ng-model="checkboxModel.value" class="checkbox">Jag accepterar <a href={{termsUrl}} target="_blank">villkor för domän registrering </a>och <a href="https://www.weld.io/terms" target="_blank">villkor för användning av Weld's tjänster</a>.
+                    </fieldset>
+                  </label>
                 </div>
                 <button ng-show="ready" type="submit" class="createPage btn btn-primary" name="button">Skapa din sida!</button>
               </form>
