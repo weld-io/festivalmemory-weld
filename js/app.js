@@ -77,8 +77,7 @@ app.controller('MainCtrl', function($scope,$http,$window) {
     //var data = JSON.stringify($scope.user);
 
     $http.post('https://weld-staging.herokuapp.com/api/users', fd,{
-            transformRequest:angular.identity,
-            headers:{'Content-type':undefined}
+            transformRequest:angular.identity
     }).success(function (data, status, headers, config) {
         $scope.PostDataResponse = data;
         $scope.status = data;
