@@ -79,10 +79,10 @@ app.controller('MainCtrl', function($scope,$http) {
     .success(function (data, status, headers, config) {
         $scope.PostDataResponse = data;
 
-        var pageUrl = "https://weld-staging.herokuapp.com";
+        var pageUrl = "https://weld-staging.herokuapp.com/";
 
-        //$window.location.href = pageUrl + data.projectSlug;
-        console.log(pageUrl + data.projectSlug);
+        $window.location.href = pageUrl + data.projectSlug;
+        console.log(data);
         console.log(status);
         console.log(headers);
         console.log(config);
@@ -93,10 +93,7 @@ app.controller('MainCtrl', function($scope,$http) {
             "<hr />headers: " + headers +
             "<hr />config: " + config;
     });
-
-     console.log('User clicked next button', data);
   };
-
 });
 
 function readURL(event){
