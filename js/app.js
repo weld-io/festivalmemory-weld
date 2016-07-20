@@ -76,9 +76,8 @@ app.controller('MainCtrl', function($scope,$http,$window) {
         fd.append('formdata',JSON.stringify($scope.user));
     //var data = JSON.stringify($scope.user);
 
-    $http.post('https://weld-staging.herokuapp.com/api/users', fd,{
-            transformRequest:angular.identity
-    }).success(function (data, status, headers, config) {
+    $http.post('https://weld-staging.herokuapp.com/api/users', fd)
+    .success(function (data, status, headers, config) {
         $scope.PostDataResponse = data;
         $scope.status = data;
         $scope.itemlist.push(data);
