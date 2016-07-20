@@ -66,27 +66,22 @@ app.controller('MainCtrl', function($scope,$http) {
   $scope.register = function() {
     $scope.user.countrycode = $scope.user.countrycode.split(":").pop();
     $scope.user.tags = ["weekendfestival2016"];
-    $scope.user.pictureurl = "";
+    $scope.user.pictureurl = " ";
     var data = JSON.stringify($scope.user);
 
-    var config = {
+    /* var config = {
                 headers : {
                     'Content-Type': 'application/json; charset=utf-8;'
                 }
-            }
+            } */
 
-    $http.post('https://weld-staging.herokuapp.com/api/users', data, config)
+    $http.post('https://weld-staging.herokuapp.com/api/users', data)
     .success(function (data, status, headers, config) {
         $scope.PostDataResponse = data;
-
         console.log(data);
         console.log(status);
         console.log(headers);
         console.log(config);
-
-        var pageUrl = "https://weld-staging.herokuapp.com";
-
-        //$window.location.href = pageUrl + ;
     })
     .error(function (data, status, headers, config) {
         $scope.ResponseDetails = "Data: " + data +
@@ -95,6 +90,7 @@ app.controller('MainCtrl', function($scope,$http) {
             "<hr />config: " + config;
     });
 
+     console.log('User clicked next button', data);
   };
 
 });
