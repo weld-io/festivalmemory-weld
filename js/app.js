@@ -67,25 +67,28 @@ app.controller('MainCtrl', function($scope,$http,$window) {
     $scope.user.countrycode = $scope.user.countrycode.split(":").pop();
     $scope.user.tags = ["weekendfestival2016"];
     $scope.user.pictureurl = " ";
-    var data = JSON.stringify($scope.user);
 
-    /* var config = {
-                headers : {
-                    'Content-Type': 'application/json; charset=utf-8;'
-                }
-            } */
+    var fd=new FormData();
+        angular.forEach($scope.files,function(file){
+            fd.append('file',file);
+        });
 
-    $http.post('https://weld-staging.herokuapp.com/api/users', data)
-    .success(function (data, status, headers, config) {
+        fd.append('formdata',JSON.stringify($scope.user));
+    //var data = JSON.stringify($scope.user);
+
+    $http.post('https://weld-staging.herokuapp.com/api/users', fd,{
+            transformRequest:angular.identity,
+            headers:{'Content-type':undefined}
+    }).success(function (data, status, headers, config) {
         $scope.PostDataResponse = data;
+        $scope.status = data;
+        $scope.itemlist.push(data);
+        $scope.message="Success";
+
+        console.log(data);
 
         var pageUrl = "https://weld-staging.herokuapp.com/";
-
-        $window.location.href = pageUrl + data.projectSlug;
-        console.log(data);
-        console.log(status);
-        console.log(headers);
-        console.log(config);
+        //$window.location.href = pageUrl + data.projectSlug;
     })
     .error(function (data, status, headers, config) {
         $scope.ResponseDetails = "Data: " + data +
@@ -101,3 +104,16 @@ function readURL(event){
   $('#image-div').css('background-image', 'url(' + imagePath + ')');
   console.log(imagePath);
 }
+
+app.directive("fileInput",['$parse',function($parse){
+    return{
+        restrict:'A',
+        link:function($scope,element,attrs){
+            element.bind('change',function(){
+                $parse(attrs.fileInput).
+                assign($scope,element[0].files)
+                $scope.$apply()
+            });
+        }
+    }
+}]);
