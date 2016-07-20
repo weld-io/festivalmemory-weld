@@ -1,13 +1,15 @@
-var app = angular.module('app', ['ngAnimate', 'countrySelect']);
+var app = angular.module('app', ['ngAnimate', 'countrySelect','naif.base64']);
 
 app.controller('MainCtrl', function($scope,$http,$window) {
 
   $scope.user = {};
 
   $scope.DomainSearch = false;
+  $scope.AcceptTerms = false;
   $scope.ImageDiv = false;
   $scope.showDomainSE = false;
   $scope.showDomainNU = false;
+  $scope.checkboxModel = {value : true};
 
   $scope.showDomainSearch = function() {
      $scope.DomainSearch = true;
@@ -57,43 +59,54 @@ app.controller('MainCtrl', function($scope,$http,$window) {
       });
   };
 
-  $scope.buttonClicked = function(domain) {
+  $scope.buttonClicked = function(domain,$event) {
       $scope.user.domain = domain;
+      if ($event.target.id == "seButton") {
+        $scope.termsUrl = "https://www.iis.se/domaner/registrera/se/villkor/";
+      } else if ($event.target.id == "nuButton") {
+        $scope.termsUrl = "https://www.iis.se/docs/terms-and-conditions-nu.pdf";
+      }
       $scope.DomainSearch = false;
+      $scope.AcceptTerms = true;
       $scope.ready = true;
   }
 
   $scope.register = function() {
-    $scope.user.countrycode = $scope.user.countrycode.split(":").pop();
-    $scope.user.tags = ["weekendfestival2016"];
-    $scope.user.pictureurl = " ";
+    if ($scope.checkboxModel.value) {
+      $scope.user.countrycode = $scope.user.countrycode.split(":").pop();
+      $scope.user.tags = ["weekendfestival2016"];
+      $scope.user.pictureurl = " ";
 
-    var fd=new FormData();
-        angular.forEach($scope.files,function(file){
-            fd.append('file',file);
-        });
+      /* var fd=new FormData();
+          angular.forEach($scope.files,function(file){
+              fd.append('file',file);
+          });
 
-        fd.append('formdata',JSON.stringify($scope.user));
-    //var data = JSON.stringify($scope.user);
+          fd.append('formdata',JSON.stringify($scope.user)); */
+      var data = JSON.stringify($scope.user);
 
-    $http.post('https://weld-staging.herokuapp.com/api/users', fd)
-    .success(function (data, status, headers, config) {
-        $scope.PostDataResponse = data;
-        $scope.status = data;
-        $scope.itemlist.push(data);
-        $scope.message="Success";
+      $http.post('https://weld-staging.herokuapp.com/api/users', data,{
+              transformRequest:angular.identity})
+      .success(function (data, status, headers, config) {
+          $scope.PostDataResponse = data;
+          //$scope.status = data;
+          //$scope.itemlist.push(data);
+          //$scope.message="Success";
 
-        console.log(data);
+          console.log(data);
 
-        var pageUrl = "https://weld-staging.herokuapp.com/";
-        //$window.location.href = pageUrl + data.projectSlug;
-    })
-    .error(function (data, status, headers, config) {
-        $scope.ResponseDetails = "Data: " + data +
-            "<hr />status: " + status +
-            "<hr />headers: " + headers +
-            "<hr />config: " + config;
-    });
+          var pageUrl = "https://weld-staging.herokuapp.com/";
+          //$window.location.href = pageUrl + data.projectSlug;
+      })
+      .error(function (data, status, headers, config) {
+          $scope.ResponseDetails = "Data: " + data +
+              "<hr />status: " + status +
+              "<hr />headers: " + headers +
+              "<hr />config: " + config;
+      });
+    } else {
+      alert("sorry");
+    }
   };
 });
 
