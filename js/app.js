@@ -75,7 +75,7 @@ app.controller('MainCtrl', function($scope,$http,$window) {
     if ($scope.checkboxModel.value) {
       $scope.user.countrycode = $scope.user.countrycode.split(":").pop();
       $scope.user.tags = ["weekendfestival2016"];
-      $scope.user.pictureurl = " ";
+      //$scope.user.pictureurl = " ";
 
       /* var fd=new FormData();
           angular.forEach($scope.files,function(file){

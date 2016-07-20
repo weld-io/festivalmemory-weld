@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <script  type="text/javascript" src="node_modules/angular/angular.js"></script>
     <script  type="text/javascript" src="node_modules/angularjs-country-select/angular.country-select.js"></script>
-    <script  type="text/javascript" src="node_modules/angular-base64-upload/src/angular-base64-upload.js"></script>
     <script  type="text/javascript" src="node_modules/angular-animate/angular-animate.js"></script>
     <script src="jquery/jquery-3.0.0.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -94,7 +93,7 @@
                   <div class="image-upload">
                     <label class="fileContainer" onclick="visibility:hidden">
                       Tryck här för att ladda upp en bild
-                      <input class="form-control" file-input="files" name="file" type='file' ng-model="user.file" base-sixty-four-input accept="image/*" id='getimage' name="background-image" ng-blur="showImageDiv();" onchange="readURL(event);" />
+                      <input class="form-control" file-input="files" name="file" type='file' ng-model="user.picturefile" base-sixty-four-input accept="image/*" id='getimage' name="background-image" ng-blur="showImageDiv();" onchange="readURL(event);" />
                     </label></br></br>
                     <div id="image-div" ng-show="ImageDiv"></div>
                   </div>
