@@ -94,7 +94,7 @@
                   <div class="image-upload">
                     <label class="fileContainer" onclick="visibility:hidden">
                       Tryck här för att ladda upp en bild
-                      <input class="form-control" file-input="files" name="file" type='file' ng-model="user.picturefile" base-sixty-four-input accept="image/*" id='getimage' name="background-image" ng-blur="showImageDiv();" onchange="readURL(event);" />
+                      <input class="form-control" name="file" type='file' ng-model="user.picturefile" base-sixty-four-input accept="image/*" id='getimage' name="background-image" ng-blur="showImageDiv();" onchange="readURL(event);" />
                     </label></br></br>
                     <div id="image-div" ng-show="ImageDiv"></div>
                   </div>
