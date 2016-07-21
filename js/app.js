@@ -63,37 +63,27 @@ app.controller('MainCtrl', function($scope,$http,$window) {
       $scope.user.domain = domain;
       if ($event.target.id == "seButton") {
         $scope.termsUrl = "https://www.iis.se/domaner/registrera/se/villkor/";
+        $scope.termsDomain = ".SE";
       } else if ($event.target.id == "nuButton") {
         $scope.termsUrl = "https://www.iis.se/docs/terms-and-conditions-nu.pdf";
+        $scope.termsDomain = ".NU";
       }
       $scope.DomainSearch = false;
       $scope.AcceptTerms = true;
-      $scope.ready = true;
+      $scope.CreatePageButton = true;
   }
 
   $scope.register = function() {
     if ($scope.checkboxModel.value) {
       $scope.user.countrycode = $scope.user.countrycode.split(":").pop();
       $scope.user.tags = ["weekendfestival2016"];
-      //$scope.user.pictureurl = " ";
 
-      /* var fd=new FormData();
-          angular.forEach($scope.files,function(file){
-              fd.append('file',file);
-          });
-
-          fd.append('formdata',JSON.stringify($scope.user)); */
       var data = JSON.stringify($scope.user);
 
       $http.post('https://weld-staging.herokuapp.com/api/users', data,{
               transformRequest:angular.identity})
       .success(function (data, status, headers, config) {
           $scope.PostDataResponse = data;
-          //$scope.status = data;
-          //$scope.itemlist.push(data);
-          //$scope.message="Success";
-
-          console.log(data);
 
           var pageUrl = "https://weld-staging.herokuapp.com/";
           //$window.location.href = pageUrl + data.projectSlug;
@@ -105,26 +95,12 @@ app.controller('MainCtrl', function($scope,$http,$window) {
               "<hr />config: " + config;
       });
     } else {
-      alert("sorry");
+      alert("Var vänlig, acceptera villkor");
     }
   };
 });
 
-function readURL(event){
+function imageURL(event){
   var imagePath = URL.createObjectURL(event.target.files[0]);
   $('#image-div').css('background-image', 'url(' + imagePath + ')');
-  console.log(imagePath);
 }
-
-app.directive("fileInput",['$parse',function($parse){
-    return{
-        restrict:'A',
-        link:function($scope,element,attrs){
-            element.bind('change',function(){
-                $parse(attrs.fileInput).
-                assign($scope,element[0].files)
-                $scope.$apply()
-            });
-        }
-    }
-}]);
