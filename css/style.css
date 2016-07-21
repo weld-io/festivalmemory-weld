@@ -225,13 +225,6 @@ input[type="checkbox"] {
 	.personal-number-input {
 	  padding-top: 210px;
 	}
-}
-
-@media screen and (max-width: 430px) {
-
-	.personal-number-input {
-	  padding-top: 125px;
-	}
 
 	.domain-se span,
 	.domain-nu span {
@@ -243,6 +236,13 @@ input[type="checkbox"] {
 		display: block;
 		width: 93%;
 		margin: 10px 10px;
+	}
+}
+
+@media screen and (max-width: 430px) {
+
+	.personal-number-input {
+	  padding-top: 125px;
 	}
 
 }
