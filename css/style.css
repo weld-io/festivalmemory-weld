@@ -235,7 +235,7 @@ input[type="checkbox"] {
 
 	.domain-se span,
 	.domain-nu span {
-		display: block;
+		display: inline-block;
 	}
 
 	#seButton,
