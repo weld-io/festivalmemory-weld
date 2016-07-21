@@ -240,8 +240,7 @@ input[type="checkbox"] {
 
 	#seButton,
 	#nuButton {
-		padding-left: 5px;
-		padding-right: 5px;
+		display: block;
 	}
 
 }
