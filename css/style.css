@@ -233,6 +233,11 @@ input[type="checkbox"] {
 	  padding-top: 125px;
 	}
 
+	.domain-se span,
+	.domain-nu span {
+		display: block;
+	}
+
 	#seButton,
 	#nuButton {
 		display: block;
