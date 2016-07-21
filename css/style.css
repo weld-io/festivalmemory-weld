@@ -41,9 +41,9 @@
 }
 
 body {
-	background: url('../img/festivalminne.jpeg');
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
+	background-image: url('../img/festivalminne.jpeg'), url('../img/festivalminne_without_header.jpeg');
+	background-repeat: repeat-x, repeat;
+	background-size: 100% auto, 100% 100%;
   font-family: "weld-regular", sans-serif;
   font-weight: bold;
 	padding-bottom: 100px;
@@ -68,7 +68,7 @@ a {
 */
 
 .personal-number-input {
-  padding-top: 400px;
+  padding-top: 450px;
 }
 
 .label-div {
@@ -101,10 +101,9 @@ input {
 .accept-terms {
 	margin-top: 20px;
 	width: 100%;
-	border: 2px solid white;
+	border: 3px solid white;
 	border-radius: 5px;
 	padding-top: 25px;
-	color: white;
 }
 
 .domain-se,
@@ -117,14 +116,17 @@ input {
 
 .domain-se span,
 .domain-nu span {
-	font-size: 1.5em !important;
+	font-size: 1.7em !important;
 	padding-left: 10px;
 	vertical-align: middle;
+	text-shadow: 1px 1px 6px rgba(0,0,0,0.6), 0px 0px 8px  rgba(0,0,0,1);
 }
 
 .accept-terms {
+	background-color: white;
 	margin-bottom: 15px;
 	padding: 10px !important;
+	color: rgb(129, 127, 128);
 }
 
 input[type="checkbox"] {
@@ -211,9 +213,24 @@ input[type="checkbox"] {
 	margin-top: 0 !important;
 }
 
-@media screen and (max-width: 767px) {
-	body {
+@media screen and (max-width: 1267px) {
 
-
+	.personal-number-input {
+	  padding-top: 270px;
 	}
+}
+
+@media screen and (max-width: 674px) {
+
+	.personal-number-input {
+	  padding-top: 210px;
+	}
+}
+
+@media screen and (max-width: 430px) {
+
+	.personal-number-input {
+	  padding-top: 125px;
+	}
+
 }
