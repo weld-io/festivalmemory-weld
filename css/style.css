@@ -41,9 +41,9 @@
 }
 
 body {
-	background-image: url('../img/festivalminne.jpeg'), url('../img/festivalminne_without_header.jpeg');
-	background-repeat: repeat-x, repeat;
-	background-size: 100% auto, 100% 100%;
+	background-image: url('../img/festivalminne.jpeg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
   font-family: "weld-regular", sans-serif;
   font-weight: bold;
 	padding-bottom: 100px;
@@ -213,14 +213,20 @@ input[type="checkbox"] {
 	margin-top: 0 !important;
 }
 
-@media screen and (max-width: 1267px) {
+@media screen and (max-width: 1224px) {
 
 	.personal-number-input {
 	  padding-top: 270px;
 	}
 }
 
-@media screen and (max-width: 674px) {
+@media screen and (max-width: 768px) {
+
+	body {
+		background-image: url('../img/festivalminne.jpeg'), url('../img/festivalminne_without_header.jpeg');
+		background-repeat: repeat-x, repeat;
+		background-size: 100% auto, 100% 100%;
+	}
 
 	.personal-number-input {
 	  padding-top: 210px;
@@ -239,7 +245,7 @@ input[type="checkbox"] {
 	}
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 480px) {
 
 	.personal-number-input {
 	  padding-top: 125px;
