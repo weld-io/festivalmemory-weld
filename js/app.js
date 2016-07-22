@@ -107,7 +107,7 @@ function imageURL(event){
 
 //Media queries for mobile
 if (matchMedia) {
-  var mq = window.matchMedia("screen and (max-width: 769px)");
+  var mq = window.matchMedia("screen and (max-device-width: 769px) and (orientation: portrait)");
   mq.addListener(WidthChange);
   WidthChange(mq);
 }
