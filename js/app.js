@@ -107,17 +107,17 @@ function imageURL(event){
 
 //Media queries for mobile
 if (matchMedia) {
-  var mq = window.matchMedia("screen and (max-device-width: 769px) and (orientation: portrait)");
+  var mq = window.matchMedia("screen and (max-width: 769px)");
   mq.addListener(WidthChange);
   WidthChange(mq);
 }
 
 function WidthChange(mq) {
   if (mq.matches) {
-    // window width is less 500px
+    // window width is less 769px
     $('body').prepend('<div id="heading"><h1 id="heading-part1">FESTIVAL</h1><br><h1 id="heading-part2">MINNEN</h1></div>');
   } else {
-    // window width is more than 500px
+    // window width is more than 769px
     $('#heading').hide();
   }
 }
