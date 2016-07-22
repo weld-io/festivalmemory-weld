@@ -104,7 +104,7 @@ function imageURL(event){
   $('#image-div').css('background-image', 'url(' + imagePath + ')');
 }
 
-//Media queries for mobile
+/* //Media queries for mobile
 if (matchMedia) {
   var mq = window.matchMedia("screen and (max-width: 769px)");
   mq.addListener(WidthChange);
@@ -119,4 +119,4 @@ function WidthChange(mq) {
     // window width is more than 769px
     $('#heading').hide();
   }
-}
+} */
