@@ -80,8 +80,7 @@ app.controller('MainCtrl', function($scope,$http,$window) {
 
       var data = JSON.stringify($scope.user);
 
-      $http.post('https://weld-staging.herokuapp.com/api/users', data,{
-              transformRequest:angular.identity})
+      $http.post('https://weld-staging.herokuapp.com/api/users', data)
       .success(function (data, status, headers, config) {
           $scope.PostDataResponse = data;
 
