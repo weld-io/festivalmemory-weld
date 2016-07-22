@@ -220,6 +220,13 @@ input[type="checkbox"] {
 	}
 }
 
+@media screen and (max-width: 1024px) {
+
+	.personal-number-input {
+	  padding-top: 240px;
+	}
+}
+
 @media screen and (max-width: 768px) {
 
 	body {
