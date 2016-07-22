@@ -41,9 +41,10 @@
 }
 
 body {
-	background-image: url('../img/festivalminne.jpeg'), url('../img/festivalminne_without_header.jpeg');
-	background-repeat: repeat-x, repeat;
-	background-size: 100% auto, 100% 100%;
+	background-image: url('../img/festivalminne.jpeg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: 50% 50%;
   font-family: "weld-regular", sans-serif;
   font-weight: bold;
 	padding-bottom: 100px;
@@ -51,6 +52,23 @@ body {
 
 a {
   text-decoration: none !important;
+}
+
+#heading-part1,
+#heading-part2 {
+	font-family: arial;
+	color: #fff;
+	font-style: italic;
+	font-weight: bold;
+	text-align: center;
+	display: inline-block;
+	text-shadow: none;
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+}
+
+#heading-part2 {
+	float: right;
 }
 
 .personal-number-input {
@@ -206,10 +224,34 @@ input[type="checkbox"] {
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
+
+	body {
+		background-image: url('../img/festivalminne_without_header.jpeg');
+	}
+
+	#heading {
+		margin-top: 80px;
+	}
+
+	#heading-part1,
+	#heading-part2 {
+		font-size: 110px;
+		text-shadow: 1px 1px 6px rgba(0,0,0,0.6)
+	}
+
+	#heading-part1 {
+		padding: 0 0 0 7%;
+		background: linear-gradient(to left, rgba(190, 89, 160,0.3), rgba(190, 89, 160,0.6), rgba(190, 89, 160,0.8));
+	}
+
+	#heading-part2 {
+		padding: 0 7% 0 0;
+		background: linear-gradient(to left, rgba(190, 89, 160,0.3), rgba(190, 89, 160,0.6), rgba(190, 89, 160,0.8));
+	}
 
 	.personal-number-input {
-	  padding-top: 210px;
+	  padding-top: 80px;
 	}
 
 	.domain-se span,
@@ -225,10 +267,49 @@ input[type="checkbox"] {
 	}
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 436px) {
+
+	#heading-part1,
+	#heading-part2 {
+		font-size: 65px;
+		text-shadow: 1px 1px 6px rgba(0,0,0,0.6)
+	}
+
+	#heading-part1 {
+		padding: 0 0 0 30px;
+	}
+
+	#heading-part2 {
+		padding: 0 30px 0 0;
+	}
+
+}
+
+@media screen and (max-width: 361px) {
+
+
+	#heading {
+		margin-top: 40px;
+	}
 
 	.personal-number-input {
-	  padding-top: 125px;
+	  padding-top: 60px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	#heading-part1,
+	#heading-part2 {
+		font-size: 50px;
+		text-shadow: 1px 1px 6px rgba(0,0,0,0.6)
+	}
+
+	#heading-part1 {
+		padding: 0 0 0 20px;
+	}
+
+	#heading-part2 {
+		padding: 0 20px 0 0;
 	}
 
 }

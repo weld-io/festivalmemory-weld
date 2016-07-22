@@ -104,3 +104,20 @@ function imageURL(event){
   var imagePath = URL.createObjectURL(event.target.files[0]);
   $('#image-div').css('background-image', 'url(' + imagePath + ')');
 }
+
+//Media queries for mobile
+if (matchMedia) {
+  var mq = window.matchMedia("(max-width: 769px)");
+  mq.addListener(WidthChange);
+  WidthChange(mq);
+}
+
+function WidthChange(mq) {
+  if (mq.matches) {
+    // window width is less 500px
+    $('body').prepend('<div id="heading"><h1 id="heading-part1">FESTIVAL</h1><br><h1 id="heading-part2">MINNEN</h1></div>');
+  } else {
+    // window width is more than 500px
+    $('#heading').hide();
+  }
+}
