@@ -40,10 +40,15 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'futura-std-bold-oblique';
+	src: url('../fonts/Futura-Std-Bold-Oblique.otf');
+}
+
 body {
 	background-image: url('../img/festivalminne_without_header.jpeg');
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	background-size: cover;
 	background-position: 50% 50%;
   font-family: "weld-regular", sans-serif;
   font-weight: bold;
@@ -56,28 +61,7 @@ body {
 
 #heading-part1,
 #heading-part2 {
-	font-size: 90px;
-	text-shadow: 2px 2px 6px rgba(0,0,0,0.6) !important;
-}
-
-#heading-part1 {
-	padding: 0 5px 0 30%;
-	background: linear-gradient(to left, rgba(190, 89, 160,0.3), rgba(190, 89, 160,0.6), rgba(190, 89, 160,0.8));
-}
-
-#heading-part2 {
-	float: right;
-	padding: 0 30% 0 5px;
-	background: linear-gradient(to left, rgba(190, 89, 160,0.3), rgba(190, 89, 160,0.6), rgba(190, 89, 160,0.8));
-}
-
-a {
-  text-decoration: none !important;
-}
-
-#heading-part1,
-#heading-part2 {
-	font-family: arial;
+	font-family: 'futura-std-bold-oblique', sans-serif;
 	color: #fff;
 	font-style: italic;
 	font-weight: bold;
@@ -86,6 +70,27 @@ a {
 	text-shadow: none;
 	margin-bottom: 0 !important;
 	margin-top: 0 !important;
+}
+
+#heading-part1,
+#heading-part2 {
+	font-size: 90px;
+	/*text-shadow: 2px 2px 6px rgba(0,0,0,0.6) !important;*/
+}
+
+#heading-part1 {
+	padding: 0 5px 0 27%;
+	background: linear-gradient(to right, rgba(190, 89, 160,0.3), rgba(190, 89, 160,0.5), rgba(190, 89, 160,0.7), rgba(190, 89, 160,0.9));
+}
+
+#heading-part2 {
+	float: right;
+	padding: 0 27% 0 5px;
+	background: linear-gradient(to left, rgba(190, 89, 160,0.3), rgba(190, 89, 160,0.5), rgba(190, 89, 160,0.7), rgba(190, 89, 160,0.9));
+}
+
+a {
+  text-decoration: none !important;
 }
 
 .personal-number-input {
@@ -103,6 +108,7 @@ a {
 }
 
 .label-span {
+	font-family: 'futura-std-bold-oblique', sans-serif;
 	display:table-cell;
  	vertical-align:middle;
   padding-left: 10px;
@@ -116,6 +122,10 @@ input {
   border-radius: 0px 0px 5px 5px !important;
   background-color: #fff !important;
   height: 40px !important;
+}
+
+select {
+	border-radius: 0 0 5px 5px !important;
 }
 
 .domain-search,
@@ -236,12 +246,18 @@ input[type="checkbox"] {
 
 @media screen and (min-width: 1370px) {
 
+	#heading-part1,
+	#heading-part2 {
+		font-size: 120px;
+		/*text-shadow: 1px 1px 6px rgba(0,0,0,0.6);*/
+	}
+
 	#heading-part1 {
-		padding: 0 5px 0 33%;
+		padding: 0 5px 0 27%;
 	}
 
 	#heading-part2 {
-		padding: 0 33% 0 5px;
+		padding: 0 27% 0 5px;
 	}
 
 }
@@ -254,16 +270,16 @@ input[type="checkbox"] {
 
 	#heading-part1,
 	#heading-part2 {
-		font-size: 110px;
-		text-shadow: 1px 1px 6px rgba(0,0,0,0.6)
+		font-size: 100px;
+		/*text-shadow: 1px 1px 6px rgba(0,0,0,0.6);*/
 	}
 
 	#heading-part1 {
-		padding: 0 5px 0 7%;
+		padding: 0 5px 0 10%;
 	}
 
 	#heading-part2 {
-		padding: 0 7% 0 5px;
+		padding: 0 10% 0 5px;
 	}
 
 	.personal-number-input {
@@ -287,8 +303,8 @@ input[type="checkbox"] {
 
 	#heading-part1,
 	#heading-part2 {
-		font-size: 65px;
-		text-shadow: 1px 1px 6px rgba(0,0,0,0.6)
+		font-size: 55px;
+		/*text-shadow: 1px 1px 6px rgba(0,0,0,0.6)*/
 	}
 
 	#heading-part1 {
@@ -303,6 +319,10 @@ input[type="checkbox"] {
 
 @media screen and (max-width: 361px) {
 
+	/* body {
+		background-size: cover;
+	} */
+
 
 	#heading {
 		margin-top: 40px;
@@ -314,8 +334,8 @@ input[type="checkbox"] {
 
 	#heading-part1,
 	#heading-part2 {
-		font-size: 50px;
-		text-shadow: 1px 1px 6px rgba(0,0,0,0.6)
+		font-size: 45px;
+		/*text-shadow: 1px 1px 6px rgba(0,0,0,0.6);*/
 	}
 
 	#heading-part1 {
