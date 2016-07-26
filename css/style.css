@@ -126,6 +126,9 @@ input {
 
 select {
 	border-radius: 0 0 5px 5px !important;
+	color: rgb(129, 127, 128) !important;
+	font-size: 1.4em !important;
+	height: 40px !important;
 }
 
 .domain-search,
@@ -223,10 +226,10 @@ input[type="checkbox"] {
     float: left;
 		height: 40px;
 		width: 100%;
-		color: grey;
+		color: rgb(129, 127, 128) !important;
 		font-family: "weld-regular", sans-serif;
-		font-size: 18px;
-		padding: 0.5em;
+		font-size: 1.4em !important;
+		padding: 0.3em 0.5em 0.5em 0.5em;
 		margin-bottom: 15px;
 }
 
