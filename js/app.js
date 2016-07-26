@@ -4,6 +4,11 @@ app.controller('MainCtrl', function($scope,$http,$window) {
 
   $scope.user = {};
 
+  $scope.$watch('countries', function () {
+    $scope.user.countrycode = $scope.countries[1];
+        console.log($scope.countries);
+  });
+
   $scope.DomainSearch = false;
   $scope.AcceptTerms = false;
   $scope.ImageDiv = false;
@@ -77,6 +82,7 @@ app.controller('MainCtrl', function($scope,$http,$window) {
     if ($scope.checkboxModel.value) {
       $scope.user.countrycode = $scope.user.countrycode.split(":").pop();
       $scope.user.tags = ["weekendfestival2016"];
+      $scope.user.pictureurl = "";
 
       var data = JSON.stringify($scope.user);
 
