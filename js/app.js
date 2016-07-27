@@ -86,7 +86,7 @@ app.controller('MainCtrl', function($scope,$http,$window) {
           $scope.PostDataResponse = data;
 
           var pageUrl = "https://weld-staging.herokuapp.com/";
-          //$window.location.href = pageUrl + data.projectSlug;
+          $window.location.href = pageUrl + data.projectSlug;
       })
       .error(function (data, status, headers, config) {
           $scope.ResponseDetails = "Data: " + data +
