@@ -79,13 +79,13 @@ body {
 }
 
 #heading-part1 {
-	padding: 0 5px 0 27%;
+	padding: 0 10px 0 27%;
 	background: linear-gradient(to right, rgba(102, 51, 153,0.3), rgba(102, 51, 153,0.5), rgba(102, 51, 153,0.7));
 }
 
 #heading-part2 {
 	float: right;
-	padding: 0 27% 0 5px;
+	padding: 0 27% 0 10px;
 	background: linear-gradient(to left, rgba(102, 51, 153,0.3), rgba(102, 51, 153,0.5), rgba(102, 51, 153,0.7));
 }
 
@@ -260,11 +260,11 @@ input[type="checkbox"] {
 	}
 
 	#heading-part1 {
-		padding: 0 5px 0 27%;
+		padding: 0 10px 0 27%;
 	}
 
 	#heading-part2 {
-		padding: 0 27% 0 5px;
+		padding: 0 27% 0 10px;
 	}
 
 }
@@ -282,11 +282,11 @@ input[type="checkbox"] {
 	}
 
 	#heading-part1 {
-		padding: 0 5px 0 10%;
+		padding: 0 10px 0 10%;
 	}
 
 	#heading-part2 {
-		padding: 0 10% 0 5px;
+		padding: 0 10% 0 10px;
 	}
 
 	.personal-number-input {
@@ -315,11 +315,11 @@ input[type="checkbox"] {
 	}
 
 	#heading-part1 {
-		padding: 0 5px 0 30px;
+		padding: 0 10px 0 30px;
 	}
 
 	#heading-part2 {
-		padding: 0 30px 0 5px;
+		padding: 0 30px 0 10px;
 	}
 
 }
@@ -346,11 +346,11 @@ input[type="checkbox"] {
 	}
 
 	#heading-part1 {
-		padding: 0 5px 0 20px;
+		padding: 0 10px 0 20px;
 	}
 
 	#heading-part2 {
-		padding: 0 20px 0 5px;
+		padding: 0 20px 0 10px;
 	}
 
 }
