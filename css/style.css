@@ -80,13 +80,13 @@ body {
 
 #heading-part1 {
 	padding: 0 5px 0 27%;
-	background: linear-gradient(to right, rgba(190, 89, 160,0.3), rgba(190, 89, 160,0.5), rgba(190, 89, 160,0.7), rgba(190, 89, 160,0.9));
+	background: linear-gradient(to right, rgba(102, 51, 153,0.3), rgba(102, 51, 153,0.5), rgba(102, 51, 153,0.7), rgba(102, 51, 153,0.9));
 }
 
 #heading-part2 {
 	float: right;
 	padding: 0 27% 0 5px;
-	background: linear-gradient(to left, rgba(190, 89, 160,0.3), rgba(190, 89, 160,0.5), rgba(190, 89, 160,0.7), rgba(190, 89, 160,0.9));
+	background: linear-gradient(to left, rgba(102, 51, 153,0.3), rgba(102, 51, 153,0.5), rgba(102, 51, 153,0.7), rgba(102, 51, 153,0.9));
 }
 
 a {
