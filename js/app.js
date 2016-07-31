@@ -22,6 +22,8 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
 
     $scope.seButtonDisable = false;
     $scope.nuButtonDisable = false;
+    $scope.seDomainShow = false;
+    $scope.nuDomainShow = false;
     $scope.searchDomainShow = true;
 
     if (domain) {
