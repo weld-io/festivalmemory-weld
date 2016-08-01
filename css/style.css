@@ -367,8 +367,8 @@ FINAL PAGE
 	}
 
 	#website-preview img {
-		width: 320px !important;
-		height: 320px !important;
+		width: 310px !important;
+		height: 310px !important;
 	}
 
 	#final-header {
@@ -391,6 +391,11 @@ FINAL PAGE
 	#heading-part2 {
 		font-size: 52px !important;
 		/*text-shadow: 1px 1px 6px rgba(0,0,0,0.6);*/
+	}
+
+	#website-preview img {
+		width: 270px !important;
+		height: 270px !important;
 	}
 
 }
