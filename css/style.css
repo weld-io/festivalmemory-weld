@@ -49,7 +49,7 @@ body {
 	background-image: url('../img/festivalminne_without_header.jpeg');
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center;
+	background-position: center top;
   font-family: "weld-regular", sans-serif;
   font-weight: bold;
 	padding-bottom: 100px;
@@ -263,6 +263,68 @@ input[type="checkbox"] {
 	width: 100% !important; height: 60px !important;
 	background-color: #47e2a1 !important;
 	margin-top: 0 !important;
+}
+
+/*********************************
+FINAL PAGE
+**********************************/
+.header {
+	margin-top: 60px;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	margin-bottom: 60px !important;
+}
+
+.final-preview {
+	text-align: center;
+	font-family: 'futura-std-bold-oblique', sans-serif;
+	color: #fff;
+	text-shadow: 1px 1px 6px rgba(0,0,0,0.6), 0px 0px 8px  rgba(0,0,0,1);
+}
+
+#final-header {
+	font-weight: bold;
+	font-size: 65px;
+	font-style: oblique;
+	margin-bottom: 0px !important;
+	margin-top: 0 !important;
+}
+
+#website-preview {
+	margin-bottom: 60px !important;
+}
+
+#message {
+	margin-bottom: 60px !important;
+	font-size: 24px;
+}
+
+#message a{
+	color: #6ec8dc;
+}
+
+#message a:hover{
+	color: #fff;
+}
+
+#share-links {
+	font-size: 24px;
+}
+
+.social {
+	width: 130px;
+	padding: 0 !important;
+	margin: 20px 5px 0;
+	background-color: #00d2ef !important;
+	border: 1px solid #00d2ef !important;
+}
+
+.social:hover {
+	opacity: 0.5;
+}
+
+.social img {
+	width: 45px;
 }
 
 @media screen and (min-width: 1370px) {
