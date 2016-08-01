@@ -300,11 +300,13 @@ FINAL PAGE
 }
 
 #message a{
-	color: #6ec8dc;
+	color: #000;
+	text-shadow: 1px 1px 6px rgba(255,255,255,0.6), 0px 0px 8px  rgba(255,255,255,1);
 }
 
 #message a:hover{
 	color: #fff;
+	text-shadow: 1px 1px 6px rgba(0,0,0,0.6), 0px 0px 8px  rgba(0,0,0,1);
 }
 
 #share-links {
