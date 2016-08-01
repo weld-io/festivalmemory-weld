@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Festivalminne</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  type="text/javascript" src="node_modules/angular/angular.js"></script>
+    <script  type="text/javascript" src="node_modules/angularjs-country-select/angular.country-select.js"></script>
+    <script  type="text/javascript" src="node_modules/angular-base64-upload/src/angular-base64-upload.js"></script>
+    <script  type="text/javascript" src="node_modules/angular-animate/angular-animate.js"></script>
+    <script  type="text/javascript" src="node_modules\underscore\underscore-min.js"></script>
+    <script  type="text/javascript" src="node_modules/angular-lodash/angular-lodash.js"></script>
+    <script src="jquery/jquery-3.0.0.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/app.js"></script>
+  </head>
+
+  <body>
+
+    <div ng-app="app">
+
+       <div id="final-page" class="container">
+
+         <div class="header final-preview row row-centered">
+           <h1 id="final-header">Varsågod, din sida är klar:</h1>
+         </div>
+
+         <div id="website-preview" class="final-preview">
+           <img src="https://d3kzdohl1nxwtg.cloudfront.net/https://www.weld.io/exp-snapshot/-KKsQ0Uo6ZvoGiyVqn0K/-KLL2sUpFgkV0iGMVKjY?user=534fd70294b7ec0b00000002&dateUpdated=1468489421045&imageFormat=jpg&imageWidth=400&imageHeight=400&browserWidth=700&browserHeight=700" alt="" />
+         </div>
+
+         <div id="message" class="final-preview">
+           <span>
+             Just nu finns den på <a href="https://www.weld.io/iis-music-festival/{{domain}}">weld.io/{{domain}}</a>, men on 2 timmar finns den på <a href="#">www.{{user.domain}}</a>.
+           </span>
+         </div>
+
+         <div id="share-links" class="final-preview">
+           <div>Dela länken:</div>
+           <button class="social btn btn-primary">
+             <a href="https://www.facebook.com/sharer/sharer.php?u={{websiteUrl}}"><img id="facebook" src="img/facebook.svg" alt="" /></a>
+           </button>
+           <button class="social btn btn-primary">
+             <a href="https://twitter.com/home?status={{websiteUrl}}"><img id="twitter" src="img/twitter.svg" alt="" /></a>
+           </button>
+           <button class="social btn btn-primary">
+             <a href="https://plus.google.com/share?url={{websiteUrl}}"><img id="google-plus" src="img/google-plus.svg" alt="" /></a>
+           </button>
+           <button class="social btn btn-primary">
+             <a href="https://www.linkedin.com/shareArticle?mini=true&url={{websiteUrl}}&title=&summary=&source="><img id="linkedin" src="img/linkedin.svg" alt="" /></a>
+           </button>
+         </div>
+
+       </div>
+
+    </div>
+  </body>
+</html>

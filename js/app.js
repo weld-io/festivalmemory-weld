@@ -2,6 +2,8 @@ var app = angular.module('app', ['ngAnimate', 'countrySelect','naif.base64','ang
 
 app.controller('MainCtrl', function($scope,$http,$window,$log) {
 
+  $scope.showMainHeader = true;
+  $scope.showMainInput = true;
   $scope.searchDomainShow = false;
   $scope.seDomainShow = false;
   $scope.nuDomainShow = false;
@@ -97,8 +99,17 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
       .success(function (data, status, headers, config) {
           $scope.PostDataResponse = data;
 
-          var pageUrl = "https://weld-staging.herokuapp.com/";
-          $window.location.href = pageUrl + data.projectSlug;
+          var pageUrl = "http://weld-staging.herokuapp.com/";
+
+          $scope.showMainHeader = false;
+          $scope.showMainInput = false;
+          $scope.showFinalPage = true;
+
+          $scope.domain = $scope.user.domain.split(".")[0];
+
+          $scope.websiteUrl = pageUrl + data.projectSlug;
+
+          //$window.location.href = pageUrl + data.projectSlug;
       })
       .error(function (data, status, headers, config) {
           $scope.ResponseDetails = "Data: " + data +
