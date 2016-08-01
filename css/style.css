@@ -295,9 +295,9 @@ FINAL PAGE
 }
 
 #message {
-	margin-bottom: 60px !important;
 	font-size: 24px;
 	max-width: 760px;
+	margin: 0 auto 60px !important;
 }
 
 #message a{
