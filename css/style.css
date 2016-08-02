@@ -299,10 +299,12 @@ FINAL PAGE
 	margin-bottom: 60px !important;
 }
 
+/*
 #website-preview img {
 	width: 400px !important;
 	height: 400px !important;
 }
+*/
 
 #message {
 	font-size: 24px;
@@ -375,12 +377,12 @@ FINAL PAGE
 		font-size: 62px;
 		/*text-shadow: 1px 1px 6px rgba(0,0,0,0.6)*/
 	}
-
+/*
 	#website-preview img {
 		width: 310px !important;
 		height: 310px !important;
 	}
-
+*/
 	#final-header {
 		font-size: 45px;
 	}
@@ -402,10 +404,10 @@ FINAL PAGE
 		font-size: 52px !important;
 		/*text-shadow: 1px 1px 6px rgba(0,0,0,0.6);*/
 	}
-
+/*
 	#website-preview img {
 		width: 270px !important;
 		height: 270px !important;
 	}
-
+*/
 }
