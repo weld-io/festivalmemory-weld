@@ -95,19 +95,17 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
       .success(function (data, status, headers, config) {
           $scope.PostDataResponse = data;
 
-          var pageUrl = "http://weld-staging.herokuapp.com/";
-
           $scope.showMainHeader = false;
           $scope.showMainInput = false;
           $scope.showFinalPage = true;
 
           $scope.domain = $scope.user.domain.split(".")[0];
-
-          $scope.websiteUrl = pageUrl + data.projectSlug;
           $scope.userId = data.userId;
           $scope.projectId = data.projectId;
 
-          //$window.location.href = pageUrl + data.projectSlug;
+          $scope.websiteUrl = "https://weld-staging.herokuapp.com/" + data.projectId + "?user=" + data.userId;
+          console.log($scope.websiteUrl);
+          //$window.location.href = websiteUrl;
       })
       .error(function (data, status, headers, config) {
           $scope.ResponseDetails = "Data: " + data +
