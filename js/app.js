@@ -99,13 +99,20 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           $scope.showMainInput = false;
           $scope.showFinalPage = true;
 
+          var url = 'https://weld-staging.herokuapp.com/';
+          var snapshotUrl = 'https://weld-staging.herokuapp.com/exp-snapshot/';
+
           $scope.domain = $scope.user.domain.split(".")[0];
           $scope.userId = data.userId;
           $scope.projectId = data.projectId;
+          $scope.projectSlug = data.projectSlug;
 
-          //$scope.websiteUrl = "https://weld-staging.herokuapp.com/" + data.projectId + "?user=" + data.userId;
-          //console.log($scope.websiteUrl);
-          //$window.location.href = websiteUrl;
+          //$scope.websiteUrl = url + data.projectId + '?user=' + data.userId;
+          //$scope.websiteSnapshotUrl = snapshotUrl + + data.projectId + '?user=' + data.userId;
+
+          $scope.websiteUrl = url + data.projectSlug;
+          $scope.websiteSnapshotUrl = snapshotUrl + data.projectSlug;
+
       })
       .error(function (data, status, headers, config) {
           $scope.ResponseDetails = "Data: " + data +
