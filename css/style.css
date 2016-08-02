@@ -127,7 +127,7 @@ a {
 }
 
 input {
-  color: rgb(129, 127, 128) !important;
+  color:  #4e5050 !important;
   font-size: 1.5em !important;
   border: 1px solid #fff !important;
   border-radius: 0px 0px 5px 5px !important;
@@ -136,9 +136,13 @@ input {
 	padding-left: 20px !important;
 }
 
+::-webkit-input-placeholder {
+    color: #c7c9cb !important;
+}
+
 select {
 	border-radius: 0 0 5px 5px !important;
-	color: rgb(129, 127, 128) !important;
+	color: #8f9190 !important;
 	font-size: 1.4em !important;
 	height: 50px !important;
 	padding-left: 20px !important;
@@ -173,7 +177,7 @@ select {
     float: left;
 		height: 50px;
 		width: 100%;
-		color: rgb(129, 127, 128) !important;
+		color: #8f9190 !important;
 		font-family: "weld-regular", sans-serif;
 		font-size: 1.4em !important;
 		padding: 0.5em;
