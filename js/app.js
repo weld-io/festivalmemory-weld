@@ -22,13 +22,13 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
 
   $scope.searchDomain = _.throttle(function (domain){
 
+    $scope.user.domain = $scope.user.name.replace(/[\s]/g, '');
+
     $scope.seButtonDisable = false;
     $scope.nuButtonDisable = false;
     $scope.seDomainShow = false;
     $scope.nuDomainShow = false;
     $scope.searchDomainShow = true;
-
-    if (domain) {
 
       $http.get('https://domain-production-weld.herokuapp.com/api/domain/' + $scope.user.domain + '.se')
       .then(function(response) {
@@ -48,12 +48,9 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           $scope.seButtonDisable = true;
           $scope.searchDomainNU();
       });
-    };
   },1000);
 
   $scope.searchDomainNU = _.throttle(function() {
-
-    if (domain) {
 
       $http.get('https://domain-production-weld.herokuapp.com/api/domain/' + $scope.user.domain + '.nu')
       .then(function(response) {
@@ -71,7 +68,6 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           nuButton.css('color','#f86060');
           $scope.nuButtonDisable = true;
       });
-    };
   },1000);
 
   $scope.buttonClicked = function(domain,$event) {
@@ -108,6 +104,8 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           $scope.domain = $scope.user.domain.split(".")[0];
 
           $scope.websiteUrl = pageUrl + data.projectSlug;
+          $scope.userId = data.userId;
+          $scope.projectId = data.projectId;
 
           //$window.location.href = pageUrl + data.projectSlug;
       })

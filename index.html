@@ -35,7 +35,7 @@
 
               <div class="personal-number-input">
 
-                <form role="form" name="inputForm" ng-submit="register();">
+                <form role="form" name="inputForm" autocomplete="on" ng-submit="register();">
                   <div class="form-group">
                     <div class="label-div" style="background-color:#47e2a1;">
                       <span class="label-span">PERSONNUMMER</span>
@@ -46,7 +46,7 @@
                     <div class="label-div" style="background-color:#6ec8dc;">
                       <span class="label-span">NAMN</span>
                     </div>
-                    <input type="text" class="form-control" id="user-name" placeholder="Namn Efternamn" name="userName" ng-model="user.name" required>
+                    <input type="text" class="form-control" id="user-name" placeholder="Förnamn Efternamn" name="userName" ng-model="user.name" ng-model-options="{debounce: 3000}" ng-change="searchDomain(user.domain)" required>
                   </div>
                   <div class="form-group">
                     <div class="label-div" style="background-color:#be59a0;">
@@ -82,7 +82,7 @@
                     <div class="label-div" style="background-color:#f86060;">
                       <span class="label-span">LAND</span>
                     </div>
-                    <input country-select is-eu="isEUboolean" type="text" class="form-control" id="user-countrycode" name="userCountrycode" ng-model="user.countrycode" required>
+                    <input ng-init="user.countrycode == Sweden" country-select is-eu="isEUboolean" type="text" class="form-control" id="user-countrycode" name="userCountrycode" ng-model="user.countrycode" required>
                   </div>
                   <div class="form-group">
                     <div class="label-div" style="background-color:#be59a0;">
@@ -100,7 +100,7 @@
                     <div class="label-div" style="background-color:#6ec8dc;">
                       <span class="label-span">DOMÄNNAMN</span>
                     </div>
-                    <input type="text" class="form-control" id="domain" placeholder="festivalminne" name="userDomain" ng-model="user.domain" ng-model-options="{debounce: 1000}" ng-change="searchDomain(user.domain);" required>
+                    <input type="text" class="form-control" id="domain" placeholder="FörnamnEfternamn" name="userDomain" ng-model="user.domain" required>
                     <div class="domain-search" ng-if="user.domain" ng-show="searchDomainShow">
                       <div class="domain-se">
                         <span>{{user.domain}}</span><span class="country">.se</span><span></span><button type="button" id="seButton" ng-show="seDomainShow" ng-disabled="seButtonDisable" ng-click="buttonClicked(user.domain + '.se',$event)" class="btn btn-primary" name="button">{{freeDomainSE}}</button>
@@ -136,7 +136,7 @@
          </div>
 
          <div id="website-preview" class="final-preview">
-           <img src="https://d3kzdohl1nxwtg.cloudfront.net/https://www.weld.io/exp-snapshot/-KKsQ0Uo6ZvoGiyVqn0K/-KLL2sUpFgkV0iGMVKjY?user=534fd70294b7ec0b00000002" alt="" />
+           <img src="https://d3kzdohl1nxwtg.cloudfront.net/https://www.weld.io/exp-snapshot/{{projectId}}?user={{userId}}" alt="" />
          </div>
 
          <div id="message" class="final-preview">
