@@ -20,9 +20,12 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
      $scope.imageDiv = true;
   };
 
-  $scope.searchDomain = _.throttle(function (domain){
-
+  $scope.autofillDomain = function() {
     $scope.user.domain = $scope.user.name.replace(/[\s]/g, '');
+    $scope.searchDomain();
+  }
+
+  $scope.searchDomain = _.throttle(function (domain){
 
     $scope.seButtonDisable = false;
     $scope.nuButtonDisable = false;

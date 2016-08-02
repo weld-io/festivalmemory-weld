@@ -9,7 +9,7 @@
     <script  type="text/javascript" src="node_modules/angularjs-country-select/angular.country-select.js"></script>
     <script  type="text/javascript" src="node_modules/angular-base64-upload/src/angular-base64-upload.js"></script>
     <script  type="text/javascript" src="node_modules/angular-animate/angular-animate.js"></script>
-    <script  type="text/javascript" src="node_modules\underscore\underscore-min.js"></script>
+    <script  type="text/javascript" src="node_modules/underscore/underscore-min.js"></script>
     <script  type="text/javascript" src="node_modules/angular-lodash/angular-lodash.js"></script>
     <script src="jquery/jquery-3.0.0.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -46,7 +46,7 @@
                     <div class="label-div" style="background-color:#6ec8dc;">
                       <span class="label-span">NAMN</span>
                     </div>
-                    <input type="text" class="form-control" id="user-name" placeholder="Förnamn Efternamn" name="userName" ng-model="user.name" ng-model-options="{debounce: 3000}" ng-change="searchDomain(user.domain)" required>
+                    <input type="text" class="form-control" id="user-name" placeholder="Förnamn Efternamn" name="userName" ng-model="user.name" ng-model-options="{debounce: 3000}" ng-change="autofillDomain(user.domain)" required>
                   </div>
                   <div class="form-group">
                     <div class="label-div" style="background-color:#be59a0;">
@@ -100,7 +100,7 @@
                     <div class="label-div" style="background-color:#6ec8dc;">
                       <span class="label-span">DOMÄNNAMN</span>
                     </div>
-                    <input type="text" class="form-control" id="domain" placeholder="FörnamnEfternamn" name="userDomain" ng-model="user.domain" required>
+                    <input type="text" class="form-control" id="domain" placeholder="FörnamnEfternamn" name="userDomain" ng-model="user.domain" ng-change="searchDomain(user.domain)" required>
                     <div class="domain-search" ng-if="user.domain" ng-show="searchDomainShow">
                       <div class="domain-se">
                         <span>{{user.domain}}</span><span class="country">.se</span><span></span><button type="button" id="seButton" ng-show="seDomainShow" ng-disabled="seButtonDisable" ng-click="buttonClicked(user.domain + '.se',$event)" class="btn btn-primary" name="button">{{freeDomainSE}}</button>
