@@ -103,8 +103,8 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           $scope.userId = data.userId;
           $scope.projectId = data.projectId;
 
-          $scope.websiteUrl = "https://weld-staging.herokuapp.com/" + data.projectId + "?user=" + data.userId;
-          console.log($scope.websiteUrl);
+          //$scope.websiteUrl = "https://weld-staging.herokuapp.com/" + data.projectId + "?user=" + data.userId;
+          //console.log($scope.websiteUrl);
           //$window.location.href = websiteUrl;
       })
       .error(function (data, status, headers, config) {
