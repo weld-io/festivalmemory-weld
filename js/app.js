@@ -107,11 +107,11 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           $scope.projectId = data.projectId;
           $scope.projectSlug = data.projectSlug;
 
-          //$scope.websiteUrl = url + data.projectId + '?user=' + data.userId;
-          //$scope.websiteSnapshotUrl = snapshotUrl + + data.projectId + '?user=' + data.userId;
+          $scope.websiteUrl = url + data.projectId + '?user=' + data.userId;
+          $scope.websiteSnapshotUrl = snapshotUrl + + data.projectId + '?user=' + data.userId;
 
-          $scope.websiteUrl = url + data.projectSlug;
-          $scope.websiteSnapshotUrl = snapshotUrl + data.projectSlug;
+          //$scope.websiteUrl = url + data.projectSlug;
+          //$scope.websiteSnapshotUrl = snapshotUrl + data.projectSlug;
 
       })
       .error(function (data, status, headers, config) {
