@@ -386,6 +386,10 @@ FINAL PAGE
 		font-size: 45px;
 	}
 
+	#message {
+		font-size: 16px;
+	}
+
 }
 
 @media screen and (max-width: 359px) {
