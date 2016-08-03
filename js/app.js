@@ -21,8 +21,10 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
   };
 
   $scope.autofillDomain = function() {
-    $scope.user.domain = $scope.user.name.replace(/[\s]/g, '');
-    $scope.searchDomain();
+    if ($scope.user.name) {
+      $scope.user.domain = $scope.user.name.replace(/[\s]/g, '');
+      $scope.searchDomain();
+    }
   }
 
   $scope.searchDomain = _.throttle(function (domain){
