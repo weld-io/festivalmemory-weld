@@ -115,7 +115,6 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
 
           $scope.websiteTempUrl = url + data.projectSlug;
           //$scope.websiteSnapshotUrl = snapshotUrl + data.projectSlug;
-          //$scope.websiteSnapshotUrl = snapshotUrl + data.projectSlug;
 
       })
       .error(function (data, status, headers, config) {
