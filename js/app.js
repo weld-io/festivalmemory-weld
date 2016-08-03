@@ -24,6 +24,8 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
     if ($scope.user.name) {
       $scope.user.domain = $scope.user.name.replace(/[\s]/g, '');
       $scope.searchDomain();
+    } else {
+      $scope.user.domain = "";
     }
   }
 
