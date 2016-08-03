@@ -51,7 +51,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           $scope.seButtonDisable = true;
           $scope.searchDomainNU();
       });
-  },1000);
+  },3000);
 
   $scope.searchDomainNU = _.throttle(function() {
 
@@ -71,7 +71,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           nuButton.css('color','#f86060');
           $scope.nuButtonDisable = true;
       });
-  },1000);
+  },3000);
 
   $scope.buttonClicked = function(domain,$event) {
       $scope.user.domain = domain;
