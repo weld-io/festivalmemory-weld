@@ -90,7 +90,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
   $scope.register = function() {
     if ($scope.checkboxModel.value) {
       $scope.user.countrycode = $scope.user.countrycode.split(":").pop();
-      $scope.user.tags = ["weekendfestival2016"];
+      $scope.user.tags = ["weekendfestival2016", "Opt-out: Welcome/Onboarding Email"];
 
       var data = JSON.stringify($scope.user);
 
@@ -113,7 +113,8 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           $scope.websiteUrl = url + data.projectId + '?user=' + data.userId;
           $scope.websiteSnapshotUrl = snapshotUrl + data.projectId + '?user=' + data.userId + '&imageFormat=jpg&imageWidth=400&imageHeight=400&browserWidth=600&browserHeight=600';
 
-          //$scope.websiteUrl = url + data.projectSlug;
+          $scope.websiteTempUrl = url + data.projectSlug;
+          //$scope.websiteSnapshotUrl = snapshotUrl + data.projectSlug;
           //$scope.websiteSnapshotUrl = snapshotUrl + data.projectSlug;
 
       })
