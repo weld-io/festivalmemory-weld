@@ -31,6 +31,11 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
     }
   }
 
+  $scope.activateCreatePageButton = function() {
+    $scope.createPageButtonDisable = false;
+    $scope.showErrorSpan = false;
+  }
+
   $scope.searchDomain = _.throttle(function (domain){
 
     $scope.seButtonDisable = false;
@@ -100,7 +105,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
 
       var data = JSON.stringify($scope.user);
 
-      $http.post('https://www.weld.io/api/users', data)
+      $http.post('https://weld-staging.herokuapp.com/api/users', data)
       .success(function (data, status, headers, config) {
           $scope.PostDataResponse = data;
 
@@ -108,8 +113,8 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           $scope.showMainInput = false;
           $scope.showFinalPage = true;
 
-          var url = 'https://www.weld.io/';
-          var snapshotUrl = 'https://www.weld.io/exp-snapshot/';
+          var url = 'https://weld-staging.herokuapp.com/';
+          var snapshotUrl = 'https://weld-staging.herokuapp.com/exp-snapshot/';
 
           $scope.domain = $scope.user.domain.split(".")[0];
           $scope.userId = data.userId;
