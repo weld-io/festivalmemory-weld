@@ -59,7 +59,7 @@
                     <div class="label-div" style="background-color:#6ec8dc;">
                       <span class="label-span">NAMN</span>
                     </div>
-                    <input type="text" class="form-control" id="user-name" placeholder="Förnamn Efternamn" name="userName" ng-model="user.name" ng-model-options="{debounce: 1000}" ng-change="autofillDomain(user.name,user.domain)" required>
+                    <input type="text" class="form-control" id="user-name" placeholder="Förnamn Efternamn" name="userName" ng-model="user.name" ng-model-options="{debounce: 1000}" ng-change="autofillDomain(user.name,user.domainname)" required>
                   </div>
                   <div class="form-group">
                     <div class="label-div" style="background-color:#be59a0;">
@@ -113,13 +113,13 @@
                     <div class="label-div" style="background-color:#6ec8dc;">
                       <span class="label-span">DOMÄNNAMN</span>
                     </div>
-                    <input type="text" class="form-control" id="domain" placeholder="FörnamnEfternamn" name="userDomain" ng-model="user.domain" ng-model-options="{debounce: 1000}" ng-change="searchDomain(user.domain)" required>
-                    <div class="domain-search" ng-if="user.domain" ng-show="searchDomainShow">
+                    <input type="text" class="form-control" id="domain" placeholder="FörnamnEfternamn" name="userDomain" ng-model="user.domainname" ng-model-options="{debounce: 1000}" ng-change="searchDomain(user.domainname)" required>
+                    <div class="domain-search" ng-if="user.domainname" ng-show="searchDomainShow">
                       <div class="domain-se">
-                        <span>{{user.domain}}</span><span class="country">.se</span><span></span><button type="button" id="seButton" ng-show="seDomainShow" ng-disabled="seButtonDisable" ng-click="buttonClicked(user.domain + '.se',$event)" class="btn btn-primary" name="button">{{freeDomainSE}}</button>
+                        <span>{{user.domainname}}</span><span class="country">.se</span><span></span><button type="button" id="seButton" ng-show="seDomainShow" ng-disabled="seButtonDisable" ng-click="buttonClicked(user.domainname + '.se',$event)" class="btn btn-primary" name="button">{{freeDomainSE}}</button>
                       </div>
                       <div class="domain-nu">
-                        <span>{{user.domain}}</span><span class="country">.nu</span><span></span><button type="button" id="nuButton" ng-show="nuDomainShow" ng-disabled="nuButtonDisable" ng-click="buttonClicked(user.domain + '.nu',$event)" class="btn btn-primary" name="button">{{freeDomainNU}}</button>
+                        <span>{{user.domainname}}</span><span class="country">.nu</span><span></span><button type="button" id="nuButton" ng-show="nuDomainShow" ng-disabled="nuButtonDisable" ng-click="buttonClicked(user.domainname + '.nu',$event)" class="btn btn-primary" name="button">{{freeDomainNU}}</button>
                       </div>
                     </div>
                   </div>
@@ -156,7 +156,7 @@
 
          <div id="message" class="final-preview">
            <span>
-             Just nu finns den på<br><a href="{{websiteTempUrl}}">{{websiteTempUrl}}</a>,<br>men om 2 timmar finns den på<br><a href="http://www.{{user.domain}}">www.{{user.domain}}</a>.
+             Just nu finns den på<br><a href="{{websiteTempUrl}}">{{websiteTempUrl}}</a>,<br>men om 2 timmar finns den på<br><a href="http://www.{{user.domainname}}">www.{{user.domainname}}</a>.
            </span>
          </div>
 
