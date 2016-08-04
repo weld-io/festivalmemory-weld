@@ -122,6 +122,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           $scope.userId = data.userId;
           $scope.projectId = data.projectId;
           $scope.projectSlug = data.projectSlug;
+          $scope.url = url;
 
           $scope.websiteUrl = url + data.projectId + '?user=' + data.userId;
           $scope.websiteSnapshotUrl = snapshotUrl + data.projectId + '?user=' + data.userId + '&imageFormat=jpg&imageWidth=400&imageHeight=400&browserWidth=600&browserHeight=600';
