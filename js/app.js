@@ -9,6 +9,8 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
   $scope.nuDomainShow = false;
   $scope.seButtonDisable = false;
   $scope.nuButtonDisable = false;
+  $scope.createPageButtonDisable = false;
+  $scope.showErrorSpan = false;
 
   $scope.user = {};
 
@@ -120,12 +122,23 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           $scope.websiteTempUrl = url + data.projectSlug;
           //$scope.websiteSnapshotUrl = snapshotUrl + data.projectSlug;
 
+          // show loading image
+          $('#loader-img').show();
+
+          // main image loaded ?
+          $('#website-preview-img').on('load', function(){
+            // hide/remove the loading image
+            $('#loader-img').hide();
+          });
+
       })
       .error(function (data, status, headers, config) {
           $scope.ResponseDetails = "Data: " + data +
               "<hr />status: " + status +
               "<hr />headers: " + headers +
               "<hr />config: " + config;
+          $scope.createPageButtonDisable = true;
+          $scope.showErrorSpan = true;
       });
     } else {
       alert("Var vänlig, acceptera villkor");
