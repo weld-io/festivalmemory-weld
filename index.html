@@ -121,7 +121,8 @@
                       </fieldset>
                     </label>
                   </div>
-                  <button ng-show="CreatePageButton" type="submit" id="create-page-button" class="btn btn-primary" name="button">Skapa din sida!</button>
+                  <button ng-show="CreatePageButton" ng-disabled="createPageButtonDisable" type="submit" id="create-page-button" class="btn btn-primary" name="button">Skapa din sida!</button>
+                  <span id="errorSpan" ng-show="showErrorSpan">Beklagar! Din mejladress finns redan registrerad hos Weld.</span>
                 </form>
 
               </div>
@@ -136,7 +137,8 @@
          </div>
 
          <div id="website-preview" class="final-preview">
-           <img src="https://d3kzdohl1nxwtg.cloudfront.net/{{websiteSnapshotUrl}}" alt="" />
+           <img id="loader-img" src="img\spinner-line-light.gif" alt="" />
+           <img id="website-preview-img" src="https://d3kzdohl1nxwtg.cloudfront.net/{{websiteSnapshotUrl}}" alt="" />
          </div>
 
          <div id="message" class="final-preview">
