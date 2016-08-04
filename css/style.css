@@ -270,6 +270,13 @@ input[type="checkbox"] {
 	margin-top: 0 !important;
 }
 
+#errorSpan {
+	color: red;
+	font-size: 1.7em !important;
+	display: block;
+	text-align: center;
+}
+
 /*********************************
 FINAL PAGE
 **********************************/
