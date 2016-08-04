@@ -46,7 +46,7 @@
                     <div class="label-div" style="background-color:#6ec8dc;">
                       <span class="label-span">NAMN</span>
                     </div>
-                    <input type="text" class="form-control" id="user-name" placeholder="Förnamn Efternamn" name="userName" ng-model="user.name" ng-model-options="{debounce: 3000}" ng-change="autofillDomain(user.name,user.domain)" required>
+                    <input type="text" class="form-control" id="user-name" placeholder="Förnamn Efternamn" name="userName" ng-model="user.name" ng-model-options="{debounce: 1000}" ng-change="autofillDomain(user.name,user.domain)" required>
                   </div>
                   <div class="form-group">
                     <div class="label-div" style="background-color:#be59a0;">
@@ -100,7 +100,7 @@
                     <div class="label-div" style="background-color:#6ec8dc;">
                       <span class="label-span">DOMÄNNAMN</span>
                     </div>
-                    <input type="text" class="form-control" id="domain" placeholder="FörnamnEfternamn" name="userDomain" ng-model="user.domain" ng-model-options="{debounce: 3000}" ng-change="searchDomain(user.domain)" required>
+                    <input type="text" class="form-control" id="domain" placeholder="FörnamnEfternamn" name="userDomain" ng-model="user.domain" ng-model-options="{debounce: 1000}" ng-change="searchDomain(user.domain)" required>
                     <div class="domain-search" ng-if="user.domain" ng-show="searchDomainShow">
                       <div class="domain-se">
                         <span>{{user.domain}}</span><span class="country">.se</span><span></span><button type="button" id="seButton" ng-show="seDomainShow" ng-disabled="seButtonDisable" ng-click="buttonClicked(user.domain + '.se',$event)" class="btn btn-primary" name="button">{{freeDomainSE}}</button>
