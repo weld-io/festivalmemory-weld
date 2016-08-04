@@ -11,6 +11,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
   $scope.nuButtonDisable = false;
   $scope.createPageButtonDisable = false;
   $scope.showErrorSpan = false;
+  $('#loader-img2').hide();
 
   $scope.user = {};
 

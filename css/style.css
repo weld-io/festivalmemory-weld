@@ -277,6 +277,10 @@ input[type="checkbox"] {
 	margin-top: 15px !important;
 }
 
+#loader-img2 {
+	width: 100% !important;
+}
+
 /*********************************
 FINAL PAGE
 **********************************/
