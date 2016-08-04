@@ -108,10 +108,14 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
       $scope.user.orgnr = matches[2] + '-' + matches[3];
       var data = JSON.stringify($scope.user);
 
+      $scope.CreatePageButton = false;
+      $('#loader-img2').show();
+
       $http.post('https://weld-staging.herokuapp.com/api/users', data)
       .success(function (data, status, headers, config) {
           $scope.PostDataResponse = data;
 
+          $('#loader-img2').hide();
           $scope.showMainHeader = false;
           $scope.showMainInput = false;
           $scope.showFinalPage = true;
