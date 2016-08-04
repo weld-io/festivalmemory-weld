@@ -127,7 +127,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           $scope.websiteSnapshotUrl = snapshotUrl + data.projectId + '?user=' + data.userId + '&imageFormat=jpg&imageWidth=400&imageHeight=400&browserWidth=600&browserHeight=600';
 
           $scope.websiteTempUrl = url + data.projectSlug;
-          //$scope.websiteSnapshotUrl = snapshotUrl + data.projectSlug;
+          $scope.websiteTempSnapshotUrl = snapshotUrl + data.projectSlug;
 
           // show loading image
           $('#loader-img').show();
