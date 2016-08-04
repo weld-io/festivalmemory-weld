@@ -14,6 +14,8 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
 
   $scope.user = {};
 
+  $scope.user.city = "Stockholm";
+
   $scope.acceptTermsShow = false;
   $scope.imageDiv = false;
   $scope.checkboxModel = {value : false};
@@ -101,7 +103,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
   $scope.register = function() {
     if ($scope.checkboxModel.value) {
       $scope.user.countrycode = $scope.user.countrycode.split(":").pop();
-      $scope.user.tags = ["weekendfestival2016", "Opt-out: Welcome/Onboarding Email"];
+      $scope.user.tags = ["Event: Weekend Festival 2016", "Opt-out: Welcome/Onboarding Email"];
 
       var data = JSON.stringify($scope.user);
 
