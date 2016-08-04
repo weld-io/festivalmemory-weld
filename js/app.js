@@ -26,10 +26,10 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
 
   $scope.autofillDomain = function() {
     if ($scope.user.name) {
-      $scope.user.domain = angular.lowercase($scope.user.name.replace(/[\s]/g, ''));
+      $scope.user.domainname = angular.lowercase($scope.user.name.replace(/[\s]/g, ''));
       $scope.searchDomain();
     } else {
-      $scope.user.domain = "";
+      $scope.user.domainname = "";
     }
   }
 
@@ -46,7 +46,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
     $scope.nuDomainShow = false;
     $scope.searchDomainShow = true;
 
-      $http.get('https://domain-production-weld.herokuapp.com/api/domain/' + $scope.user.domain + '.se')
+      $http.get('https://domain-production-weld.herokuapp.com/api/domain/' + $scope.user.domainname + '.se')
       .then(function(response) {
           //First function handles success (.se domain is available)
           $scope.freeDomainSE = "Välj!";
@@ -68,7 +68,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
 
   $scope.searchDomainNU = _.throttle(function() {
 
-      $http.get('https://domain-production-weld.herokuapp.com/api/domain/' + $scope.user.domain + '.nu')
+      $http.get('https://domain-production-weld.herokuapp.com/api/domain/' + $scope.user.domainname + '.nu')
       .then(function(response) {
           //First function handles success (.nu domain is available)
           $scope.freeDomainNU = "Välj!";
@@ -87,7 +87,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
   },3000);
 
   $scope.buttonClicked = function(domain,$event) {
-      $scope.user.domain = domain;
+      $scope.user.domainname = domain;
       if ($event.target.id == "seButton") {
         $scope.termsUrl = "https://www.iis.se/domaner/registrera/se/villkor/";
         $scope.termsDomain = ".SE";
@@ -118,7 +118,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           var url = 'https://weld-staging.herokuapp.com/';
           var snapshotUrl = 'https://weld-staging.herokuapp.com/exp-snapshot/';
 
-          $scope.domain = $scope.user.domain.split(".")[0];
+          $scope.domain = $scope.user.domainname.split(".")[0];
           $scope.userId = data.userId;
           $scope.projectId = data.projectId;
           $scope.projectSlug = data.projectSlug;
