@@ -26,7 +26,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
 
   $scope.autofillDomain = function() {
     if ($scope.user.name) {
-      $scope.user.domain = $scope.user.name.replace(/[\s]/g, '');
+      $scope.user.domain = angular.lowercase($scope.user.name.replace(/[\s]/g, ''));
       $scope.searchDomain();
     } else {
       $scope.user.domain = "";
