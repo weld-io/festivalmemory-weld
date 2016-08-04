@@ -272,9 +272,8 @@ input[type="checkbox"] {
 
 #errorSpan {
 	color: red;
-	font-size: 1.7em !important;
+	font-size: 1.4em !important;
 	display: block;
-	text-align: center;
 }
 
 /*********************************
