@@ -71,7 +71,7 @@
                     <div class="label-div" style="background-color:#f86060;">
                       <span class="label-span">TELEFON</span>
                     </div>
-                    <input type="text" class="form-control" id="user-phone" placeholder="+46712345678" name="userPhone" ng-model="user.phone" required>
+                    <input type="text" class="form-control" id="user-phone" placeholder="0701234567" name="userPhone" ng-model="user.phone" required>
                   </div>
                   <div class="form-group">
                     <div class="label-div" style="background-color:#47e2a1;">
@@ -89,7 +89,7 @@
                     <div class="label-div" style="background-color:#be59a0;">
                       <span class="label-span">POSTNUMMER</span>
                     </div>
-                    <input type="number" class="form-control" id="user-zipcode" placeholder="12345" name="userZipcode" ng-model="user.zipcode" required>
+                    <input type="text" class="form-control" id="user-zipcode" placeholder="12345" name="userZipcode" ng-model="user.zipcode" required>
                   </div>
                   <div class="form-group">
                     <div class="label-div" style="background-color:#f86060;">
@@ -127,15 +127,15 @@
                     <label>
                       <fieldset class="form-inline">
                         <input type="checkbox" ng-model="checkboxModel.value" class="checkbox">
-                        Genom att klicka "Godkänner" accepterar du följande:<br>
-                          <a href={{termsUrl}} target="_blank">Avtal för toppdomänen {{termsDomain}} </a><br>
-                          <a href="https://www.nameisp.com/sv/about/conditions" target="_blank">NameISP användaravtal</a><br>
-                          <a href="https://www.weld.io/terms" target="_blank">Användarvillkor för Weld's tjänster</a>
+                        Jag godkänner:<br>
+                          &bull; <a href="https://www.weld.io/terms" target="_blank">Welds användarvillkor</a><br>
+                          &bull; <a href={{termsUrl}} target="_blank">Avtal för toppdomänen {{termsDomain}}</a><br>
+                          &bull; <a href="https://www.nameisp.com/sv/about/conditions" target="_blank">NameISPs användaravtal</a>
                       </fieldset>
                     </label>
                   </div>
                   <span id="errorSpan" ng-show="showErrorSpan">Beklagar! Din mejladress finns redan registrerad hos Weld.</span>
-                  <button ng-show="CreatePageButton" ng-disabled="createPageButtonDisable" type="submit" id="create-page-button" class="btn btn-primary" name="button">Skapa din sida!</button>
+                  <button ng-show="CreatePageButton" ng-disabled="createPageButtonDisable" type="submit" id="create-page-button" class="btn btn-primary" name="button">Skapa min sida!</button>
                   <img id="loader-img2" src="img\spinner-line-light.gif" alt="" />
                 </form>
 
