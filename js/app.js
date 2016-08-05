@@ -11,7 +11,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
   $scope.nuButtonDisable = false;
   $scope.createPageButtonDisable = false;
   $scope.showErrorSpan = false;
-  $('#loader-img2').hide();
+  //$('#loader-img2').hide();
 
   $scope.user = {};
 
@@ -109,14 +109,14 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
       $scope.user.orgnr = matches[2] + '-' + matches[3];
       var data = JSON.stringify($scope.user);
 
-      $scope.CreatePageButton = false;
-      $('#loader-img2').show();
+      $scope.createPageButtonDisable = true;
+      //$('#loader-img2').show();
 
       $http.post('https://www.weld.io/api/users', data)
       .success(function (data, status, headers, config) {
           $scope.PostDataResponse = data;
 
-          $('#loader-img2').hide();
+          //$('#loader-img2').hide();
           $scope.showMainHeader = false;
           $scope.showMainInput = false;
           $scope.showFinalPage = true;
