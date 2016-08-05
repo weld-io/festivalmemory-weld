@@ -113,7 +113,7 @@
                     <div class="label-div" style="background-color:#6ec8dc;">
                       <span class="label-span">DOMÄNNAMN</span>
                     </div>
-                    <input type="text" class="form-control" id="domain" placeholder="FörnamnEfternamn" name="userDomain" ng-model="user.domainname" ng-model-options="{debounce: 1000}" ng-change="searchDomain(user.domainname)" required>
+                    <input type="text" class="form-control" id="domain" placeholder="VilketNamnDuVill" name="userDomain" ng-model="user.domainname" ng-model-options="{debounce: 1000}" ng-change="searchDomain(user.domainname)" required>
                     <div class="domain-search" ng-if="user.domainname" ng-show="searchDomainShow">
                       <div class="domain-se">
                         <span>{{user.domainname}}</span><span class="country">.se</span><span></span><button type="button" id="seButton" ng-show="seDomainShow" ng-disabled="seButtonDisable" ng-click="buttonClicked(user.domainname + '.se',$event)" class="btn btn-primary" name="button">{{freeDomainSE}}</button>
@@ -152,7 +152,7 @@
 
          <div id="website-preview" class="final-preview">
            <img id="loader-img" src="img\spinner-line-light.gif" alt="" />
-           <img id="website-preview-img" src="https://d3kzdohl1nxwtg.cloudfront.net/{{websiteSnapshotUrl}}" alt="" />
+           <a href="{{websiteTempUrl}}" target="_blank"><img id="website-preview-img" src="https://d3kzdohl1nxwtg.cloudfront.net/{{websiteSnapshotUrl}}" alt="Preview of www.{{user.domainname}}"/></a>
          </div>
 
          <div id="message" class="final-preview">
