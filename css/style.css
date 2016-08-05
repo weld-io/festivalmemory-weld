@@ -401,7 +401,11 @@ FINAL PAGE
 	#final-header {
 		font-size: 45px;
 	}
-
+	#image-div {
+		transform: rotate(90deg);
+		width: 70%;
+		margin: 0 auto;
+	}
 }
 
 @media screen and (max-width: 359px) {
