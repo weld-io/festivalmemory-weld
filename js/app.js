@@ -35,7 +35,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
   }
 
   $scope.activateCreatePageButton = function() {
-    $scope.createPageButtonDisable = false;
+    //$scope.createPageButtonDisable = false;
     $scope.showErrorSpan = false;
   }
 
@@ -151,7 +151,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
               "<hr />status: " + status +
               "<hr />headers: " + headers +
               "<hr />config: " + config;
-          $scope.createPageButtonDisable = true;
+          $scope.createPageButtonDisable = false;
           $scope.showErrorSpan = true;
       });
     } else {
