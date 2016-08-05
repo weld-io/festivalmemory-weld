@@ -41,7 +41,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
   }
 
   $scope.activateCreatePageButton = function() {
-    //$scope.createPageButtonDisable = false;
+    $scope.createPageButtonDisable = false;
     $scope.showErrorSpan = false;
   }
 
