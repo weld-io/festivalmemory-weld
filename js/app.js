@@ -140,6 +140,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           $scope.websiteSnapshotUrl = snapshotUrl + data.projectId + '?user=' + data.userId + '&imageFormat=jpg&imageWidth=400&imageHeight=400&browserWidth=600&browserHeight=600';
 
           $scope.websiteTempUrl = url + data.projectSlug;
+          $scope.websiteTempShortUrl = $scope.websiteTempUrl.substring($scope.websiteTempUrl.indexOf('//')+2, $scope.websiteTempUrl.length).replace('www.', '');
           $scope.websiteTempSnapshotUrl = snapshotUrl + data.projectSlug;
 
           // show loading image
