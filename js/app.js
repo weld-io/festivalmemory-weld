@@ -2,6 +2,12 @@ var app = angular.module('app', ['ngAnimate', 'countrySelect','naif.base64','ang
 
 app.controller('MainCtrl', function($scope,$http,$window,$log) {
 
+  var DEBUG_MODE = false;
+  var SERVER_URL = 'https://www.weld.io/';
+  if (DEBUG_MODE) {
+    SERVER_URL = 'https://weld-staging.herokuapp.com/';
+  }
+
   $scope.showMainHeader = true;
   $scope.showMainInput = true;
   $scope.searchDomainShow = false;
@@ -35,7 +41,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
   }
 
   $scope.activateCreatePageButton = function() {
-    $scope.createPageButtonDisable = false;
+    //$scope.createPageButtonDisable = false;
     $scope.showErrorSpan = false;
   }
 
@@ -112,7 +118,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
       $scope.createPageButtonDisable = true;
       //$('#loader-img2').show();
 
-      $http.post('https://www.weld.io/api/users', data)
+      $http.post(SERVER_URL + 'api/users', data)
       .success(function (data, status, headers, config) {
           $scope.PostDataResponse = data;
 
@@ -121,8 +127,8 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
           $scope.showMainInput = false;
           $scope.showFinalPage = true;
 
-          var url = 'https://www.weld.io/';
-          var snapshotUrl = 'https://www.weld.io/exp-snapshot/';
+          var url = SERVER_URL;
+          var snapshotUrl = SERVER_URL + 'exp-snapshot/';
 
           $scope.domain = $scope.user.domainname.split(".")[0];
           $scope.userId = data.userId;
@@ -151,7 +157,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
               "<hr />status: " + status +
               "<hr />headers: " + headers +
               "<hr />config: " + config;
-          $scope.createPageButtonDisable = true;
+          $scope.createPageButtonDisable = false;
           $scope.showErrorSpan = true;
       });
     } else {
