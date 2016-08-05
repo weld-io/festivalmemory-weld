@@ -15,7 +15,7 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
 
   $scope.user = {};
 
-  $scope.user.city = "Stockholm";
+  //$scope.user.city = "Stockholm";
 
   $scope.acceptTermsShow = false;
   $scope.imageDiv = false;
