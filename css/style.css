@@ -114,7 +114,8 @@ a {
   font-size: 1em;
   font-style: italic;
   color: #fff;
-  border: 1px solid none;
+  /*border: 1px solid none;*/
+  border: none;
   border-radius: 5px 5px 0px 0px;
 }
 
@@ -129,11 +130,21 @@ a {
 input {
   color: #4e5050 !important;
   font-size: 1.5em !important;
-  border: 1px solid #fff !important;
+  /*border: 1px solid #fff !important;*/
+  border: none;
   border-radius: 0px 0px 5px 5px !important;
   background-color: #fff !important;
   height: 50px !important;
 	padding-left: 20px !important;
+}
+
+.form-control {
+	border: none;
+}
+
+/* Turn light-red when invalid + modified + not-empty */
+input.form-control.ng-invalid.ng-dirty:not(.ng-empty) {
+	background-color: #f8cbcb !important;
 }
 
 select {
