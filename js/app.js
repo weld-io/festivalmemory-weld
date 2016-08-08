@@ -3,9 +3,13 @@ var app = angular.module('app', ['ngAnimate', 'countrySelect','naif.base64','ang
 app.controller('MainCtrl', function($scope,$http,$window,$log) {
 
   var DEBUG_MODE = false;
+
   var SERVER_URL = 'https://www.weld.io/';
-  if (DEBUG_MODE) {
+  if (DEBUG_MODE === 'staging') {
     SERVER_URL = 'https://weld-staging.herokuapp.com/';
+  }
+  else if (DEBUG_MODE) {
+    SERVER_URL = 'http://localhost:9000/';
   }
 
   $scope.showMainHeader = true;
@@ -111,6 +115,9 @@ app.controller('MainCtrl', function($scope,$http,$window,$log) {
     if ($scope.checkboxModel.value) {
       $scope.user.countrycode = $scope.user.countrycode.split(":").pop();
       $scope.user.tags = ["Event: Weekend Festival 2016", "Opt-out: Welcome/Onboarding Email"];
+      if (DEBUG_MODE) {
+        $scope.user.tags.push("no-domain");
+      }
       var matches = $scope.user.orgnr.match(/^(19|20)?([0-9]{6})[- ]?([0-9]{4})$/);
       $scope.user.orgnr = matches[2] + '-' + matches[3];
       var data = JSON.stringify($scope.user);
